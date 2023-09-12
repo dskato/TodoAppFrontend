@@ -1,0 +1,64 @@
+<!--
+    NAVBAR
+-->
+<nav class="navbar">
+  <div class="container-fluid">
+    <span class="navbar-brand mb-0 h1">{{ "navbar-title" | translate }}</span>
+    <i class="bi bi-translate" (click)="switchLanguage()"></i>
+  </div>
+</nav>
+<!--
+    LOGIN
+-->
+<div class="container-fluid">
+  <div class="row px-3 justify-content-center align-items-center"  style="min-height: 90vh;">
+    <div class="login-cont col-md-4 mx-auto mt-2 ">
+      <div class="text-center">
+        <h5 class="mt-3">
+          {{ "login" | translate }}
+        </h5>
+      </div>
+
+      <div class="my-3">
+        <label for="email-inpt" class="form-label">{{
+          "email" | translate
+        }}</label>
+        <input
+          type="email"
+          class="form-control"
+          id="email-inpt"
+          placeholder="name@example.com"
+        />
+        <label for="password-inpt" class="form-label mt-3">{{
+          "password" | translate
+        }}</label>
+        <input
+          type="password"
+          class="form-control"
+          id="password-inpt"
+          placeholder=""
+        />
+        <div class="d-grid gap-2 col-6 mx-auto my-3">
+          <button class="btn btn-primary" type="button">
+            {{ "login" | translate }}
+          </button>
+        </div>
+        <div class="text-center">
+          <span class="mx-auto">
+            {{ "sigin-msg" | translate }}
+          </span>
+        </div>
+        <div class="d-grid gap-2 col-6 mx-auto my-3">
+          <button class="btn btn-primary" type="button">
+            {{ "sigin" | translate }}
+          </button>
+        </div>
+        <div class="text-center mb-3">
+          <span class="recover-pass mx-auto">
+            {{ "restore-password" | translate }}
+          </span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

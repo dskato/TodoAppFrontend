@@ -1,0 +1,11 @@
+{
+  "navbar-title": "Hour Management System",
+
+  "login": "Log in",
+  "email": "Email",
+  "password": "Password",
+  "restore-password": "Recover Password",
+  "sigin": "Sign in",
+  "sigin-msg": "Aren't registered yet?"
+
+}

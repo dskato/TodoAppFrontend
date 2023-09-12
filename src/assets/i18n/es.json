@@ -1,0 +1,10 @@
+{
+  "navbar-title": "Sistema De Manejo De Horas",
+
+  "login": "Iniciar Sesion",
+  "email": "Correo",
+  "password": "Contrasena",
+  "restore-password": "Restablecer Contrasena",
+  "sigin": "Registrarse",
+  "sigin-msg": "Aun no estas registrado?"
+}

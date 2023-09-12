@@ -1,0 +1,17 @@
+.navbar{
+    background-color: #222222;
+}
+
+.navbar-brand{
+    color: white;
+}
+.bi{
+    color: white;
+}
+.login-cont{
+    background-color: white;
+    border-radius: 10px;
+}
+.recover-pass{
+    text-decoration: underline;
+}
