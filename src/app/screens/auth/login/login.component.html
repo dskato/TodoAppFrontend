@@ -3,6 +3,7 @@
 -->
 <nav class="navbar">
   <div class="container-fluid">
+    
     <i class="bi bi-translate" (click)="switchLanguage()"></i>
   </div>
 </nav>
@@ -16,10 +17,10 @@
   >
     <div class="login-cont col-md-4 mx-auto mt-2">
       <div class="text-center">
-        <h5 class="mt-3">
+        <h5 class="cont-title mt-3">
           {{ "navbar-title" | translate }}
         </h5>
-        <h5 class="mt-3">
+        <h5 class="cont-title mt-3">
           {{ "login" | translate }}
         </h5>
       </div>
@@ -54,12 +55,12 @@
           </button>
         </div>
         <div class="text-center">
-          <span class="mx-auto">
+          <span class="mx-auto" id="sigin-msg">
             {{ "sigin-msg" | translate }}
           </span>
         </div>
         <div class="d-grid gap-2 col-6 mx-auto my-3">
-          <button class="btn btn-primary" type="button">
+          <button class="btn btn-primary" type="button" id="btn-signin" (click)="sigin()">
             {{ "sigin" | translate }}
           </button>
         </div>

@@ -6,6 +6,15 @@
   "password": "Password",
   "restore-password": "Recover Password",
   "sigin": "Sign in",
-  "sigin-msg": "Aren't registered yet?"
+  "sigin-msg": "Aren't registered yet?",
+  "incorrect-auth":"Incorrrect Email or Password",
 
+  "sigin-personal_info":"Personal Information",
+  "sigin-firstname":"Firstname",
+  "sigin-lastname":"Lastname",
+  "sigin-dateofbirth":"Date of birth",
+  "sigin-phone":"Phone",
+  "sigin-address":"Address",
+  "sigin-account_info":"Account information"
+  
 }

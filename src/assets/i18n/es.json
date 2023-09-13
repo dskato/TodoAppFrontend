@@ -6,5 +6,14 @@
   "password": "Contrasena",
   "restore-password": "Restablecer Contrasena",
   "sigin": "Registrarse",
-  "sigin-msg": "Aun no estas registrado?"
+  "sigin-msg": "Aun no estas registrado?",
+  "incorrect-auth":"Correo o Contrasena incorrecta",
+
+  "sigin-personal_info":"Informacion personal",
+  "sigin-firstname":"Nombre",
+  "sigin-lastname":"Apellido",
+  "sigin-dateofbirth":"Fecha de nacimiento",
+  "sigin-phone":"Telefono",
+  "sigin-address":"Direccion",
+  "sigin-account_info":"Informacion de la cuenta"
 }

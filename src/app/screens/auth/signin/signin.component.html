@@ -1,1 +1,114 @@
-<p>signin works!</p>
+<!--
+    NAVBAR
+-->
+<nav class="navbar">
+  <div class="container-fluid">
+    <i class="bi bi-house-fill" (click)="goHome()"></i>
+    <i class="bi bi-translate" (click)="switchLanguage()"></i>
+  </div>
+</nav>
+<!--
+    SIGNIN FORM
+-->
+<div class="container-fluid">
+  <div
+    class="row px-3 justify-content-center align-items-center"
+    style="min-height: 90vh"
+  >
+    <div class="signin-cont col-md-4 mx-auto my-3">
+      <div class="text-left">
+        <h5 class="cont-title mt-3">
+          {{ "sigin-personal_info" | translate }}
+        </h5>
+
+        <div [formGroup]="signinForm" class="mt-1">
+          <label for="firstname-inpt" class="form-label">{{
+            "sigin-firstname" | translate
+          }}</label>
+          <input
+            type="text"
+            class="form-control"
+            id="firstname-inpt"
+            placeholder="David"
+            formControlName="firstname"
+            name="firstname"
+          />
+          <label for="lastname-inpt" class="form-label mt-1">{{
+            "sigin-lastname" | translate
+          }}</label>
+          <input
+            type="text"
+            class="form-control"
+            id="lastname-inpt"
+            placeholder="Araujo"
+            formControlName="lastname"
+            name="lastname"
+          />
+          <label for="phone-inpt" class="form-label mt-1">{{
+            "sigin-phone" | translate
+          }}</label>
+          <input
+            type="tel"
+            class="form-control"
+            id="phone-inpt"
+            placeholder=""
+            formControlName="phone"
+            name="phone"
+          />
+          <label for="address-inpt" class="form-label mt-1">{{
+            "sigin-address" | translate
+          }}</label>
+          <input
+            type="text"
+            class="form-control"
+            id="address-inpt"
+            placeholder=""
+            formControlName="address"
+            name="address"
+          />
+          <label for="dateofbirth-inpt" class="form-label mt-1">{{
+            "sigin-dateofbirth" | translate
+          }}</label>
+          <input
+            type="date"
+            class="form-control"
+            id="dateofbirth-inpt"
+            placeholder=""
+            formControlName="dateofbirth"
+            name="dateofbirth"
+          />
+          <h5 class="cont-title mt-3">
+            {{ "sigin-account_info" | translate }}
+          </h5>
+          <label for="email-inpt" class="form-label mt-1">{{
+            "email" | translate
+          }}</label>
+          <input
+            type="email"
+            class="form-control"
+            id="email-inpt"
+            placeholder="name@example.com"
+            formControlName="email"
+            name="email"
+          />
+          <label for="password-inpt" class="form-label mt-1">{{
+            "password" | translate
+          }}</label>
+          <input
+            type="password"
+            class="form-control"
+            id="password-inpt"
+            placeholder=""
+            formControlName="password"
+            name="password"
+          />
+          <div class="d-grid gap-2 col-6 mx-auto my-3">
+            <button class="btn btn-primary" type="button" id="btn-signin" >
+              {{ "sigin" | translate }}
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
