@@ -3,6 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { Observable, map } from 'rxjs';
 import { BaseResponse } from 'src/app/interfaces/base-response';
 import { environment } from 'src/environments/environment.development';
+import { SaveUser } from 'src/app/interfaces/save-user';
 
 @Injectable({
   providedIn: 'root',
@@ -10,11 +11,14 @@ import { environment } from 'src/environments/environment.development';
 export class AuthenticationService {
   //URL
   private authApiUrl!: string;
-  //Resource
+  private systemApiUrl!: string;
+  //Resources
   private loginRes: string = 'Auth/Login';
+  private saveUserRes:string = 'System/User/SaveUser';
 
   constructor(private http: HttpClient) {
     this.authApiUrl = environment.AuthApi;
+    this.systemApiUrl = environment.SystemApi;
   }
 
   //Return the token
@@ -25,4 +29,12 @@ export class AuthenticationService {
       loginData
     );
   }
+
+  registerUser(userDto: SaveUser):  Observable<BaseResponse<string>>{
+    return this.http.post<BaseResponse<string>>(
+      this.systemApiUrl + this.saveUserRes,
+      userDto
+    );
+  }
+
 }

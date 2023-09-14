@@ -3,6 +3,8 @@ import { LanguageService } from 'src/app/services/language.service';
 import { Router } from '@angular/router';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ToastrService } from 'ngx-toastr';
+import { AuthenticationService } from 'src/app/services/api/auth/authentication.service';
+import { SaveUser } from 'src/app/interfaces/save-user';
 
 @Component({
   selector: 'app-signin',
@@ -15,7 +17,9 @@ export class SigninComponent {
   constructor(
     private languageService: LanguageService,
     private router: Router,
-    private formBuilder: FormBuilder
+    private formBuilder: FormBuilder,
+    private toastr: ToastrService,
+    private authService: AuthenticationService
   ) {
     this.signinForm = this.formBuilder.group({
       firstname: ['', [Validators.required]],
@@ -25,8 +29,32 @@ export class SigninComponent {
       dateofbirth: ['', [Validators.required]],
 
       email: ['', [Validators.required, Validators.email]],
-      password: ['', [Validators.required, Validators.minLength(8)]]
+      password: ['', [Validators.required, Validators.minLength(8)]],
     });
+  }
+
+  saveUser() {
+    
+    var saveUserDto = {} as SaveUser;
+
+    if (this.signinForm.valid) {
+      saveUserDto.firstName = this.signinForm.get('firstname')?.value;
+      saveUserDto.lastName = this.signinForm.get('lastname')?.value;
+      saveUserDto.phoneNumber = this.signinForm.get('phone')?.value;
+      saveUserDto.address = this.signinForm.get('address')?.value;
+      saveUserDto.dateOfBirth = this.signinForm.get('dateofbirth')?.value;
+      saveUserDto.email = this.signinForm.get('email')?.value;
+      saveUserDto.password = this.signinForm.get('password')?.value;
+
+      this.authService.registerUser(saveUserDto).subscribe(
+        (response) => {
+          console.log(response);
+        },
+        (error) => {
+          console.log(error);
+        }
+      );
+    }
   }
 
   switchLanguage() {
