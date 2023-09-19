@@ -50,6 +50,11 @@ export class LoginComponent {
                 this.translateService.instant('incorrect-auth'),
                 'Error'
               );
+            }else{
+              this.toastr.success(
+                this.translateService.instant('correct-auth'),
+                'Ok'
+              );
             }
           },
           (error) => {

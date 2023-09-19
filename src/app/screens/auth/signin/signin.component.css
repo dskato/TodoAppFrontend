@@ -24,3 +24,8 @@
 .btn:active {
   background-color: #474747;
 }
+
+.validation-text{
+  font-size: 0.9rem;
+  
+}

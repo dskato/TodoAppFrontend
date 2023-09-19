@@ -33,6 +33,9 @@
             formControlName="firstname"
             name="firstname"
           />
+          <div *ngIf="signinForm.get('firstname')?.hasError('required')" class="validation-text text-danger">
+            {{ "sigin-validation-firstname" | translate }}
+          </div>
           <label for="lastname-inpt" class="form-label mt-1">{{
             "sigin-lastname" | translate
           }}</label>
@@ -44,6 +47,9 @@
             formControlName="lastname"
             name="lastname"
           />
+          <div *ngIf="signinForm.get('lastname')?.hasError('required')" class="validation-text text-danger">
+            {{ "sigin-validation-lastname" | translate }}
+          </div>
           <label for="phone-inpt" class="form-label mt-1">{{
             "sigin-phone" | translate
           }}</label>
@@ -55,6 +61,9 @@
             formControlName="phone"
             name="phone"
           />
+          <div *ngIf="signinForm.get('phone')?.hasError('required')" class="validation-text text-danger">
+            {{ "sigin-validation-phone" | translate }}
+          </div>
           <label for="address-inpt" class="form-label mt-1">{{
             "sigin-address" | translate
           }}</label>
@@ -66,6 +75,9 @@
             formControlName="address"
             name="address"
           />
+          <div *ngIf="signinForm.get('address')?.hasError('required')" class="validation-text text-danger">
+            {{ "sigin-validation-address" | translate }}
+          </div>
           <label for="dateofbirth-inpt" class="form-label mt-1">{{
             "sigin-dateofbirth" | translate
           }}</label>
@@ -77,6 +89,9 @@
             formControlName="dateofbirth"
             name="dateofbirth"
           />
+          <div *ngIf="signinForm.get('dateofbirth')?.hasError('required')" class="validation-text text-danger">
+            {{ "sigin-validation-dateofbirth" | translate }}
+          </div>
           <h5 class="cont-title mt-3">
             {{ "sigin-account_info" | translate }}
           </h5>
@@ -91,6 +106,12 @@
             formControlName="email"
             name="email"
           />
+          <div *ngIf="signinForm.get('email')?.hasError('required')" class="validation-text text-danger">
+            {{ "sigin-validation-email" | translate }}
+          </div>
+          <div *ngIf="signinForm.get('email')?.hasError('email')" class="validation-text text-danger">
+            {{ "sigin-validation-email-format" | translate }}
+          </div>
           <label for="password-inpt" class="form-label mt-1">{{
             "password" | translate
           }}</label>
@@ -102,6 +123,12 @@
             formControlName="password"
             name="password"
           />
+          <div *ngIf="signinForm.get('password')?.hasError('required')" class="validation-text text-danger">
+            {{ "sigin-validation-password" | translate }}
+          </div>
+          <div *ngIf="signinForm.get('password')?.hasError('minlength')" class="validation-text text-danger">
+            {{ "sigin-validation-password-format" | translate }}
+          </div>
           <div class="d-grid gap-2 col-6 mx-auto my-3">
             <button class="btn btn-primary" type="button" id="btn-signin" (click)="saveUser()">
               {{ "sigin" | translate }}

@@ -22,8 +22,8 @@ export class AuthenticationService {
   }
 
   //Return the token
-  login(username: string, password: string): Observable<BaseResponse<string>> {
-    const loginData = { username, password };
+  login(email: string, password: string): Observable<BaseResponse<string>> {
+    const loginData = { email, password };
     return this.http.post<BaseResponse<string>>(
       this.authApiUrl + this.loginRes,
       loginData

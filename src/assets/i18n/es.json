@@ -8,6 +8,7 @@
   "sigin": "Registrarse",
   "sigin-msg": "Aun no estas registrado?",
   "incorrect-auth":"Correo o Contrasena incorrecta",
+  "correct-auth":"Inicio de sesion satisfactorio!",
 
   "sigin-personal_info":"Informacion personal",
   "sigin-firstname":"Nombre",
@@ -15,5 +16,15 @@
   "sigin-dateofbirth":"Fecha de nacimiento",
   "sigin-phone":"Telefono",
   "sigin-address":"Direccion",
-  "sigin-account_info":"Informacion de la cuenta"
+  "sigin-account_info":"Informacion de la cuenta",
+  "sigin-validation-firstname":"El nombre es requerido.",
+  "sigin-validation-lastname":"El apellido es requerido.",
+  "sigin-validation-phone":"El telefono es requerido.",
+  "sigin-validation-address":"La direccion es requerida.",
+  "sigin-validation-dateofbirth":"La fecha de nacimiento es requerida.",
+  "sigin-validation-email":"El correo es requerido.",
+  "sigin-validation-email-format":"Formato de correo invalido.",
+  "sigin-validation-password":"La contrasena es requerida",
+  "sigin-validation-password-format":"La contrasena debe contener minimo 8 caracteres.",
+  "sigin-OK":"Usuario registrado correctamente!"
 }

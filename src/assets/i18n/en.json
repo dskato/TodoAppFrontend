@@ -8,6 +8,7 @@
   "sigin": "Sign in",
   "sigin-msg": "Aren't registered yet?",
   "incorrect-auth":"Incorrrect Email or Password",
+  "correct-auth":"User logged succesfully!",
 
   "sigin-personal_info":"Personal Information",
   "sigin-firstname":"Firstname",
@@ -15,6 +16,16 @@
   "sigin-dateofbirth":"Date of birth",
   "sigin-phone":"Phone",
   "sigin-address":"Address",
-  "sigin-account_info":"Account information"
+  "sigin-account_info":"Account information",
+  "sigin-validation-firstname":"Firstname is required.",
+  "sigin-validation-lastname":"Lastname is required",
+  "sigin-validation-phone":"Phone is required.",
+  "sigin-validation-address":"Address is required.",
+  "sigin-validation-dateofbirth":"Birthdate is required.",
+  "sigin-validation-email":"Email is required.",
+  "sigin-validation-email-format":"Invalid email format.",
+  "sigin-validation-password":"Password is required.",
+  "sigin-validation-password-format":"Password must be at least 8 characters long.",
+  "sigin-OK":"User registered succesfully!"
   
 }
