@@ -6,6 +6,7 @@ import { ToastrService } from 'ngx-toastr';
 import { TranslateService } from '@ngx-translate/core';
 import { Router } from '@angular/router';
 import { TokenService } from 'src/app/services/token/token.service';
+import { RouteGuardService } from 'src/app/services/auth-guard/route-guard.service';
 
 @Component({
   selector: 'app-login',
@@ -22,7 +23,8 @@ export class LoginComponent {
     private toastr: ToastrService,
     private translateService: TranslateService,
     private router: Router,
-    private tokenService: TokenService
+    private tokenService: TokenService,
+    private routeGuard: RouteGuardService
   ) {
     this.loginForm = this.formBuilder.group({
       email: ['', [Validators.required, Validators.email]],
@@ -30,9 +32,11 @@ export class LoginComponent {
     });
   }
 
-  ngOnInit(){
-    
+  ngOnInit() {
+    this.routeGuard.redirectBasedOnRole();
   }
+
+  
 
   switchLanguage() {
     this.languageService.switchLanguage();
@@ -75,9 +79,4 @@ export class LoginComponent {
         );
     }
   }
-
-  
-  
-  
-
 }

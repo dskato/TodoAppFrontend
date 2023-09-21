@@ -18,13 +18,14 @@ import { SigninComponent } from './screens/auth/signin/signin.component';
 import { RecoverPasswordComponent } from './screens/auth/recover-password/recover-password.component';
 import { AdminPanelComponent } from './screens/admin/admin-panel/admin-panel.component';
 import { CheckInComponent } from './screens/checkin/check-in/check-in.component';
+import { UnauthorizedComponent } from './screens/unauthorized/unauthorized.component';
 
 export function HttpLoaderFactory(http: HttpClient) {
   return new TranslateHttpLoader(http, './assets/i18n/', '.json');
 }
 
 @NgModule({
-  declarations: [AppComponent, LoginComponent, SigninComponent, RecoverPasswordComponent, AdminPanelComponent, CheckInComponent],
+  declarations: [AppComponent, LoginComponent, SigninComponent, RecoverPasswordComponent, AdminPanelComponent, CheckInComponent, UnauthorizedComponent],
   imports: [
     BrowserModule,
     FormsModule,
