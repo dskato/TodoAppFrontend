@@ -26,6 +26,22 @@
   "sigin-validation-email-format":"Invalid email format.",
   "sigin-validation-password":"Password is required.",
   "sigin-validation-password-format":"Password must be at least 8 characters long.",
-  "sigin-OK":"User registered succesfully!"
+  "sigin-OK":"User registered succesfully!",
+
+  "rpassword-title":"Restore password",
+  "rpassword-info":"Enter your email address and we will send you a code to reset your password.",
+  "rpassword-btn":"Send code",
+  "rpassword-lbl":"Enter the code sent to your email.",
+  "rpassword-verify":"Verify code",
+  "rpassword-validation-code":"The code is required.",
+  "rpassword-validation-codeok":"Correct code!",
+  "rpassword-validation-codenotok":"Incorrect code!",
+  "rpassword-lbl-newpass":"New password",
+  "rpassword-lbl-verifynewpass":"Confirm new password",
+  "rpassword-btn-chg":"Change password",
+  "rpassword-notmatch":"Password does not match",
+  "rpassword-allok":"Password changed succesfully!"
+
+
   
 }

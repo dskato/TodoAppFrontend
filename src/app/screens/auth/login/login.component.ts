@@ -5,6 +5,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ToastrService } from 'ngx-toastr';
 import { TranslateService } from '@ngx-translate/core';
 import { Router } from '@angular/router';
+import { TokenService } from 'src/app/services/token/token.service';
 
 @Component({
   selector: 'app-login',
@@ -20,7 +21,8 @@ export class LoginComponent {
     private formBuilder: FormBuilder,
     private toastr: ToastrService,
     private translateService: TranslateService,
-    private router: Router
+    private router: Router,
+    private tokenService: TokenService
   ) {
     this.loginForm = this.formBuilder.group({
       email: ['', [Validators.required, Validators.email]],
@@ -28,12 +30,20 @@ export class LoginComponent {
     });
   }
 
+  ngOnInit(){
+    
+  }
+
   switchLanguage() {
     this.languageService.switchLanguage();
   }
 
-  sigin(){
+  sigin() {
     this.router.navigate(['/signin']);
+  }
+
+  recoverPasssword() {
+    this.router.navigate(['/recover-password']);
   }
 
   login() {
@@ -50,11 +60,13 @@ export class LoginComponent {
                 this.translateService.instant('incorrect-auth'),
                 'Error'
               );
-            }else{
+            } else {
               this.toastr.success(
                 this.translateService.instant('correct-auth'),
                 'Ok'
               );
+
+              this.tokenService.setToken(response.data);
             }
           },
           (error) => {
@@ -63,4 +75,9 @@ export class LoginComponent {
         );
     }
   }
+
+  
+  
+  
+
 }

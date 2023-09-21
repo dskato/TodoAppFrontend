@@ -3,11 +3,11 @@
 
   "login": "Iniciar Sesion",
   "email": "Correo",
-  "password": "Contrasena",
-  "restore-password": "Restablecer Contrasena",
+  "password": "Contraseña",
+  "restore-password": "Restablecer Contraseña",
   "sigin": "Registrarse",
   "sigin-msg": "Aun no estas registrado?",
-  "incorrect-auth":"Correo o Contrasena incorrecta",
+  "incorrect-auth":"Correo o Contraseña incorrecta",
   "correct-auth":"Inicio de sesion satisfactorio!",
 
   "sigin-personal_info":"Informacion personal",
@@ -24,7 +24,22 @@
   "sigin-validation-dateofbirth":"La fecha de nacimiento es requerida.",
   "sigin-validation-email":"El correo es requerido.",
   "sigin-validation-email-format":"Formato de correo invalido.",
-  "sigin-validation-password":"La contrasena es requerida",
-  "sigin-validation-password-format":"La contrasena debe contener minimo 8 caracteres.",
-  "sigin-OK":"Usuario registrado correctamente!"
+  "sigin-validation-password":"La contraseña es requerida",
+  "sigin-validation-password-format":"La contraseña debe contener minimo 8 caracteres.",
+  "sigin-OK":"Usuario registrado correctamente!",
+
+  "rpassword-title":"Restablecer contraseña",
+  "rpassword-info":"Ingresa tu correo electronico y nosotros enviaremos un codigo para restablecer tu contraseña.",
+  "rpassword-btn":"Enviar codigo",
+  "rpassword-lbl":"Ingresa el código enviado a tu correo electrónico.",
+  "rpassword-verify":"Verificar codigo",
+  "rpassword-validation-code":"El codigo es requerido.",
+  "rpassword-validation-codeok":"Codigo correcto!",
+  "rpassword-validation-codenotok":"Codigo incorrecto!",
+  "rpassword-lbl-newpass":"Nueva contraseña",
+  "rpassword-lbl-verifynewpass":"Confirmar nueva contraseña",
+  "rpassword-btn-chg":"Cambiar contraseña",
+  "rpassword-notmatch":"Las contraseñas no coinciden",
+  "rpassword-allok":"Contraseña cambiada satisfactoriamente!"
+
 }

@@ -15,13 +15,16 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { LoginComponent } from './screens/auth/login/login.component';
 import { SigninComponent } from './screens/auth/signin/signin.component';
+import { RecoverPasswordComponent } from './screens/auth/recover-password/recover-password.component';
+import { AdminPanelComponent } from './screens/admin/admin-panel/admin-panel.component';
+import { CheckInComponent } from './screens/checkin/check-in/check-in.component';
 
 export function HttpLoaderFactory(http: HttpClient) {
   return new TranslateHttpLoader(http, './assets/i18n/', '.json');
 }
 
 @NgModule({
-  declarations: [AppComponent, LoginComponent, SigninComponent],
+  declarations: [AppComponent, LoginComponent, SigninComponent, RecoverPasswordComponent, AdminPanelComponent, CheckInComponent],
   imports: [
     BrowserModule,
     FormsModule,

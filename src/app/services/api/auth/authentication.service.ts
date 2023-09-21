@@ -14,7 +14,10 @@ export class AuthenticationService {
   private systemApiUrl!: string;
   //Resources
   private loginRes: string = 'Auth/Login';
-  private saveUserRes:string = 'System/User/SaveUser';
+  private saveUserRes: string = 'System/User/SaveUser';
+  private restorePasswordRes: string = 'System/RestorePassword/RestoreUserPassword';
+  private verifyCodeRes: string = 'System/RestorePassword/VerifyCode';
+  private changePasswordRes: string = 'System/RestorePassword/ChangePassword';
 
   constructor(private http: HttpClient) {
     this.authApiUrl = environment.AuthApi;
@@ -23,18 +26,41 @@ export class AuthenticationService {
 
   //Return the token
   login(email: string, password: string): Observable<BaseResponse<string>> {
-    const loginData = { email, password };
+    const payload = { email, password };
     return this.http.post<BaseResponse<string>>(
       this.authApiUrl + this.loginRes,
-      loginData
+      payload
     );
   }
 
-  registerUser(userDto: SaveUser):  Observable<BaseResponse<string>>{
+  registerUser(userDto: SaveUser): Observable<BaseResponse<string>> {
     return this.http.post<BaseResponse<string>>(
       this.systemApiUrl + this.saveUserRes,
       userDto
     );
   }
 
+  restorePassword(email: string): Observable<BaseResponse<string>> {
+    const payload = { email };
+    return this.http.post<BaseResponse<string>>(
+      this.systemApiUrl + this.restorePasswordRes,
+      payload
+    );
+  }
+
+  verifyCode(code: string): Observable<BaseResponse<string>> {
+    const payload = { code };
+    return this.http.post<BaseResponse<string>>(
+      this.systemApiUrl + this.verifyCodeRes,
+      payload
+    );
+  }
+
+  changePassword(code: string, newPassword: string) {
+    const payload = { code, newPassword };
+    return this.http.post<BaseResponse<string>>(
+      this.systemApiUrl + this.changePasswordRes,
+      payload
+    );
+  }
 }
