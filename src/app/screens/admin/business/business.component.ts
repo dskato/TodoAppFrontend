@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Country, City, State } from 'country-state-city';
+import { AdminService } from 'src/app/services/api/admin/admin.service';
+import { UserDto } from 'src/app/interfaces/user-dto';
 
 @Component({
   selector: 'app-business',
@@ -12,12 +14,16 @@ export class BusinessComponent {
   coutryList!: any;
   stateList!: any;
   cityList!: any;
+  userList!: UserDto[];
 
   //---
   sCountry!: any;
   sState!: any;
 
-  constructor(private formBuilder: FormBuilder) {
+  constructor(
+    private formBuilder: FormBuilder,
+    private adminService: AdminService
+  ) {
     this.addBusinessForm = this.formBuilder.group({
       bname: ['', [Validators.required]],
       bdescription: [],
@@ -28,8 +34,18 @@ export class BusinessComponent {
       baddress: ['', [Validators.required]],
       bphone: [],
       bemail: [],
+      brepresentative: [Validators.required]
     });
     this.coutryList = Country.getAllCountries();
+
+    this.adminService.getAssignableUsers().subscribe(
+      (response) => {
+        this.userList = response.data as unknown  as UserDto[];
+      },
+      (error) => {
+        console.log(error);
+      }
+    );
   }
 
   onCountrySelection() {

@@ -42,13 +42,13 @@
   "rpassword-notmatch":"Las contraseñas no coinciden",
   "rpassword-allok":"Contraseña cambiada satisfactoriamente!",
 
-  "navbar-business":"Gestionar negocio",
+  "navbar-business":"Gestionar empresa",
   "navbar-users":"Gestionar usuarios",
 
-  "business-add-title":"Agregar un nuevo negocio",
+  "business-add-title":"Agregar una nueva empresa",
   "business-add-description":"Los campos con * son requeridos",
 
-  "businessform-name":"Nombre del negocio",
+  "businessform-name":"Nombre de la empresa",
   "businessform-description":"Descripcion",
   "businessform-country":"Pais",
   "businessform-state":"Provincia",
@@ -57,7 +57,8 @@
   "businessform-representative":"Representante",
   "businessform-phone":"Telefono",
   "businessform-email":"Correo electrónico",
-  "businessform-address":"Direccion"
+  "businessform-address":"Direccion",
+  "businessform-btn-save":"Guardar empresa"
 
 
 }

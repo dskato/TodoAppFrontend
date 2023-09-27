@@ -36,8 +36,6 @@ export class LoginComponent {
     this.routeGuard.redirectBasedOnRole();
   }
 
-  
-
   switchLanguage() {
     this.languageService.switchLanguage();
   }
@@ -71,6 +69,7 @@ export class LoginComponent {
               );
 
               this.tokenService.setToken(response.data);
+              this.routeGuard.redirectBasedOnRole();
             }
           },
           (error) => {
