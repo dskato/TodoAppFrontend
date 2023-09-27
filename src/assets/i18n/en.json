@@ -40,7 +40,25 @@
   "rpassword-lbl-verifynewpass":"Confirm new password",
   "rpassword-btn-chg":"Change password",
   "rpassword-notmatch":"Password does not match",
-  "rpassword-allok":"Password changed succesfully!"
+  "rpassword-allok":"Password changed succesfully!",
+
+  "navbar-business":"Manage business",
+  "navbar-users":"Manage users",
+
+  "business-add-title":"Add a new business",
+  "business-add-description":"Fields with * are required",
+
+  "businessform-name":"Business name",
+  "businessform-description":"Description",
+  "businessform-country":"Country",
+  "businessform-state":"State",
+  "businessform-city":"City",
+  "businessform-zipcode":"Zip code",
+  "businessform-representative":"Representative",
+  "businessform-phone":"Phone",
+  "businessform-email":"Email",
+  "businessform-address":"Address"
+
 
 
   

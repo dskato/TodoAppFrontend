@@ -1,6 +1,6 @@
 export interface UserToken {
   Id: string;
-  Role: string;
+  role: string;
   sub: string;
   email: string;
   jti: string;

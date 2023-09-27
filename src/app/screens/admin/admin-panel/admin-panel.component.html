@@ -1,1 +1,74 @@
-<p>admin-panel works!</p>
+<nav class="navbar navbar-dark bg-dark">
+  <div class="container-fluid">
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-bs-toggle="collapse"
+      data-bs-target="#navbarToggleExternalContent"
+      aria-controls="navbarToggleExternalContent"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+    >
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <i class="bi bi-translate"></i>
+  </div>
+</nav>
+<!--MASTER COLLAPSE-->
+<div class="collapse" id="navbarToggleExternalContent">
+  <div class="bg-dark p-4">
+    <div class="row">
+      <!--BUSINESS BUTTON-->
+      <div
+        data-bs-toggle="collapse"
+        data-bs-target="#navbarToggleExternalContent-business"
+        aria-controls="navbarToggleExternalContent-business"
+        aria-expanded="false"
+        aria-label="Toggle navigation-business"
+        class="row"
+      >
+        <div class="col-1" style="width: 2rem">
+          <i class="bi bi-building"></i>
+        </div>
+        <div class="col">
+          <span class="nav-txt mx-auto" id="sigin-msg">
+            {{ "navbar-business" | translate }}
+          </span>
+        </div>
+      </div>
+      <!--SUB BUSINESS-->
+      <div
+        class="collapse"
+        id="navbarToggleExternalContent-business"
+        data-bs-toggle="collapse"
+        data-bs-target="#navbarToggleExternalContent"
+        aria-controls="navbarToggleExternalContent"
+        aria-expanded="false"
+      >
+        <div class="row mt-2" (click)="showAddBusinessComponent()">
+          <div class="col-1 ms-4" style="width: 2rem">
+            <i class="bi bi-building-add"></i>
+          </div>
+          <div class="col">
+            <span class="nav-txt mx-auto" id="sigin-msg">
+              {{ "business-add-title" | translate }}
+            </span>
+          </div>
+        </div>
+      </div>
+      <!--END SUB BUSINESS-->
+      <div class="row mt-3">
+        <div class="col-1" style="width: 2rem">
+          <i class="bi bi-people-fill"></i>
+        </div>
+        <div class="col">
+          <span class="nav-txt mx-auto" id="sigin-msg">
+            {{ "navbar-users" | translate }}
+          </span>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- END MASTER COLLAPSE-->
+</div>
+<app-business *ngIf="vvAddBusinessComponent"></app-business>

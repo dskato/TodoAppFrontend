@@ -6,6 +6,7 @@ import { ToastrService } from 'ngx-toastr';
 import { AuthenticationService } from 'src/app/services/api/auth/authentication.service';
 import { SaveUser } from 'src/app/interfaces/save-user';
 import { TranslateService } from '@ngx-translate/core';
+import { RouteGuardService } from 'src/app/services/auth-guard/route-guard.service';
 
 @Component({
   selector: 'app-signin',
@@ -22,7 +23,9 @@ export class SigninComponent {
     private toastr: ToastrService,
     private authService: AuthenticationService,
     private translateService: TranslateService,
+    private routeGuard: RouteGuardService
   ) {
+    this.routeGuard.redirectBasedOnRole();
     this.signinForm = this.formBuilder.group({
       firstname: ['', [Validators.required]],
       lastname: ['', [Validators.required]],

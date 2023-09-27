@@ -40,6 +40,24 @@
   "rpassword-lbl-verifynewpass":"Confirmar nueva contraseña",
   "rpassword-btn-chg":"Cambiar contraseña",
   "rpassword-notmatch":"Las contraseñas no coinciden",
-  "rpassword-allok":"Contraseña cambiada satisfactoriamente!"
+  "rpassword-allok":"Contraseña cambiada satisfactoriamente!",
+
+  "navbar-business":"Gestionar negocio",
+  "navbar-users":"Gestionar usuarios",
+
+  "business-add-title":"Agregar un nuevo negocio",
+  "business-add-description":"Los campos con * son requeridos",
+
+  "businessform-name":"Nombre del negocio",
+  "businessform-description":"Descripcion",
+  "businessform-country":"Pais",
+  "businessform-state":"Provincia",
+  "businessform-city":"Ciudad",
+  "businessform-zipcode":"Codigo postal",
+  "businessform-representative":"Representante",
+  "businessform-phone":"Telefono",
+  "businessform-email":"Correo electrónico",
+  "businessform-address":"Direccion"
+
 
 }

@@ -7,4 +7,15 @@ import { Component } from '@angular/core';
 })
 export class AdminPanelComponent {
 
+  vvAddBusinessComponent: boolean = true;
+  //vvUserComponent: boolean = false;
+
+  constructor(){
+
+  }
+
+
+  showAddBusinessComponent(){
+    this.vvAddBusinessComponent = true;
+  }
 }

@@ -59,7 +59,7 @@ export class TokenService {
   }
 
   getUserRole(): string {
-    return jwtDecode<UserToken>(this.getToken()).Role;
+    return jwtDecode<UserToken>(this.getToken()).role;
   }
   getUserId(): string {
     return jwtDecode<UserToken>(this.getToken()).Id;

@@ -4,6 +4,7 @@ import { Router } from '@angular/router';
 import { AuthenticationService } from 'src/app/services/api/auth/authentication.service';
 import { ToastrService } from 'ngx-toastr';
 import { TranslateService } from '@ngx-translate/core';
+import { RouteGuardService } from 'src/app/services/auth-guard/route-guard.service';
 
 @Component({
   selector: 'app-recover-password',
@@ -24,8 +25,12 @@ export class RecoverPasswordComponent {
     private router: Router,
     private authService: AuthenticationService,
     private toastr: ToastrService,
-    private translateService: TranslateService
-  ) {}
+    private translateService: TranslateService,
+    private routeGuard: RouteGuardService
+    
+  ) {
+    this.routeGuard.redirectBasedOnRole();
+  }
 
   switchLanguage() {
     this.languageService.switchLanguage();
