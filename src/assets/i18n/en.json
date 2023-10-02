@@ -65,7 +65,17 @@
   "businessform-address":"Address*",
   "businessform-btn-save":"Save business",
 
-  "business-managment-option":"Business management options"
+  "business-managment-option":"Business management options",
+  "bmo-title":"Business management options",
+  "bmo-description":"Update business details and manage user roles.",
+  "bmo-ls-name":"Name",
+  "bmo-ls-description":"Description",
+  "bmo-ls-address":"Address",
+  "bmo-ls-phone":"Phone",
+  "bmo-ls-email":"Email",
+  "bmo-ls-options":"Options"
+
+
 
 
   

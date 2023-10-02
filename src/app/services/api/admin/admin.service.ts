@@ -23,6 +23,8 @@ export class AdminService {
   private makeUserRepresentativeRes: string =
     'System/Business/MakeUserBusinessRepresentative';
   private getAllBusinessRes: string = 'System/Business/GetAllBusiness';
+  private getAllBusinessByIdUserRes: string =
+    'System/Business/GetAllBusinessByUserAndRole/';
 
   constructor(private http: HttpClient, private tokenService: TokenService) {
     this.authApiUrl = environment.AuthApi;
@@ -81,6 +83,18 @@ export class AdminService {
   getAllBusiness(): Observable<BaseResponse<string>> {
     return this.http.get<BaseResponse<string>>(
       this.systemApiUrl + this.getAllBusinessRes
+    );
+  }
+
+  getAllBusinessByUser(idUser: number): Observable<BaseResponse<string>> {
+    const headers = new HttpHeaders({
+      Authorization: `Bearer ${this.tokenService.getToken()}`,
+    });
+    const options = { headers: headers };
+
+    return this.http.get<BaseResponse<string>>(
+      this.systemApiUrl + this.getAllBusinessByIdUserRes + idUser,
+      options
     );
   }
 }

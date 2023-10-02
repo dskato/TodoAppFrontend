@@ -65,6 +65,14 @@
   "businessform-address":"Direccion*",
   "businessform-btn-save":"Guardar empresa",
 
-  "business-managment-option":"Opciones de gestion de empresa"
+  "business-managment-option":"Opciones de gestion de empresa",
+  "bmo-title":"Opciones de gestion de empresa",
+  "bmo-description":"Actualiza los detalles de la empresa y gestiona los roles de usuario.",
+  "bmo-ls-name":"Nombre",
+  "bmo-ls-description":"Descripcion",
+  "bmo-ls-address":"Direccion",
+  "bmo-ls-phone":"Telefono",
+  "bmo-ls-email":"Correo",
+  "bmo-ls-options":"Opciones"
 
 }

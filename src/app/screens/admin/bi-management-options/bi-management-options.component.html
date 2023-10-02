@@ -1,1 +1,149 @@
 <div class="container-fluid">
+  <div
+    class="row px-3 justify-content-center align-items-center"
+    style="min-height: 90vh"
+  >
+    <div class="bioptions-cont col-md-7 mx-auto my-3">
+      <div class="text-center">
+        <h5 class="cont-title mt-3">
+          {{ "bmo-title" | translate }}
+        </h5>
+      </div>
+      <div class="text-left">
+        <span class="req-fields mx-auto">
+          {{ "bmo-description" | translate }}
+        </span>
+      </div>
+      <hr class="mt-2 mb-2" />
+
+      <div class="row biCont mx-2 my-2">
+        <!-- Show only on phones -->
+        <div class="col d-block d-sm-none text-center">
+          <span class="req-fields mx-auto ls-title">
+            {{ "bmo-ls-name" | translate }}
+          </span>
+        </div>
+
+        <!-- Show only on phones -->
+        <div class="col d-block d-sm-none text-center">
+          <span class="req-fields mx-auto ls-title">
+            {{ "bmo-ls-options" | translate }}
+          </span>
+        </div>
+
+        <!-- Hide on phones -->
+        <div class="col d-none d-sm-block text-center">
+          <span class="req-fields mx-auto ls-title">
+            {{ "bmo-ls-name" | translate }}
+          </span>
+        </div>
+
+        <!-- Hide on phones -->
+        <div class="col d-none d-sm-block text-center">
+          <span class="req-fields mx-auto ls-title">
+            {{ "bmo-ls-description" | translate }}
+          </span>
+        </div>
+
+        <!-- Hide on phones -->
+        <div class="col d-none d-sm-block text-center">
+          <span class="req-fields mx-auto ls-title">
+            {{ "bmo-ls-email" | translate }}
+          </span>
+        </div>
+
+        <!-- Hide on phones -->
+        <div class="col d-none d-sm-block text-center">
+          <span class="req-fields mx-auto ls-title">
+            {{ "bmo-ls-phone" | translate }}
+          </span>
+        </div>
+
+        <!-- Hide on phones -->
+        <div class="col d-none d-sm-block text-center">
+          <span class="req-fields mx-auto ls-title">
+            {{ "bmo-ls-options" | translate }}
+          </span>
+        </div>
+
+        <!-- ################ LIST ############### -->
+      </div>
+      <div
+        class="row biCont-ls mx-2 my-2 align-items-center"
+        style="max-height: 90vh"
+      >
+        <div class="row my-2" *ngFor="let business of businessList">
+          <!-- Show only on phones -->
+          <div class="col d-block d-sm-none">
+            <input
+              class="form-control"
+              type="text"
+              name="bname"
+              [value]="business.name"
+              disabled
+            />
+          </div>
+          <!-- Show only on phones -->
+          <div class="col-auto d-block d-sm-none">
+            <div class="row">
+              <div class="col">
+                <i class="bi bi-pencil-fill"></i>
+              </div>
+              <div class="col">
+                <i class="bi bi-people-fill"></i>
+              </div>
+            </div>
+          </div>
+
+          <!-- ############################################# Hide on phones #############################################-->
+          <div class="col d-none d-sm-block">
+            <input
+              class="form-control"
+              type="text"
+              name="bname"
+              [value]="business.name"
+              disabled
+            />
+          </div>
+          <div class="col d-none d-sm-block">
+            <input
+              class="form-control"
+              type="text"
+              name="bname"
+              [value]="business.description"
+              disabled
+            />
+          </div>
+          <div class="col d-none d-sm-block">
+            <input
+              class="form-control"
+              type="text"
+              name="bname"
+              [value]="business.email"
+              disabled
+            />
+          </div>
+          <div class="col d-none d-sm-block">
+            <input
+              class="form-control"
+              type="text"
+              name="bname"
+              [value]="business.phone"
+              disabled
+            />
+          </div>
+          <div class="col-auto d-none d-sm-block">
+            <div class="row">
+              <div class="col">
+                <i class="bi bi-pencil-fill"></i>
+              </div>
+              <div class="col">
+                <i class="bi bi-people-fill"></i>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
