@@ -95,6 +95,25 @@
           <h5 class="cont-title mt-3">
             {{ "sigin-account_info" | translate }}
           </h5>
+          <!--##################### ACCOUNT INFO ######################################### -->
+          <label for="assignedBusiness" class="form-label mt-1">{{
+            "sigin-business" | translate
+          }}</label>
+          <select
+            class="form-select"
+            id="assignedBusiness"
+            name="assignedBusiness"
+            formControlName="assignedBusiness"
+            aria-label="Select business"
+            
+          >
+            <option *ngFor="let business of businessList" [ngValue]="business">
+              {{ business.name }}
+            </option>
+          </select>
+          <div *ngIf="signinForm.get('assignedBusiness')?.hasError('required')" class="validation-text text-danger">
+            {{ "sigin-validation-business" | translate }}
+          </div>
           <label for="email-inpt" class="form-label mt-1">{{
             "email" | translate
           }}</label>

@@ -26,22 +26,22 @@ export class TokenService {
 
   isTokenValid(): boolean {
     const token = this.getToken();
-    var isValid = false;
+    let isValid = false;
 
     if (!token) {
       return isValid;
     }
+    const payload = JSON.parse(atob(token.split('.')[1]));
+    const expirationTime = payload.exp * 1000; // Convert expiration time to milliseconds
+    const currentTime = new Date().getTime();
 
-    if (token) {
-      const payload = JSON.parse(atob(token.split('.')[1]));
-      const expirationTime = payload.exp;
-      const currentTime = new Date().getTime();
-      if (currentTime >= expirationTime) {
-        isValid = true;
-      } else {
-        isValid = false;
-      }
+    if (currentTime < expirationTime) {
+      isValid = true;
+    } else {
+      isValid = false;
+      this.removeToken()
     }
+
     return isValid;
   }
 

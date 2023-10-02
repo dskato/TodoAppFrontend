@@ -1,18 +1,23 @@
 <nav class="navbar navbar-dark bg-dark">
   <div class="container-fluid">
-    <button
-      class="navbar-toggler"
-      type="button"
-      data-bs-toggle="collapse"
-      data-bs-target="#navbarToggleExternalContent"
-      aria-controls="navbarToggleExternalContent"
-      aria-expanded="false"
-      aria-label="Toggle navigation"
-    >
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <i class="bi bi-translate"></i>
-  </div>
+      <div class="col-9" >
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarToggleExternalContent"
+          aria-controls="navbarToggleExternalContent"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+      </div>
+      <div class="col text-end" >
+        <i class="bi bi-translate" (click)="switchLanguage()"></i>
+      </div>
+      
+    </div>
 </nav>
 <!--MASTER COLLAPSE-->
 <div class="collapse" id="navbarToggleExternalContent">
@@ -28,7 +33,7 @@
         class="row"
       >
         <div class="col-1" style="width: 2rem">
-          <i class="bi bi-building"></i>
+          <i class="bi bi-building-fill"></i>
         </div>
         <div class="col">
           <span class="nav-txt mx-auto" id="sigin-msg">
@@ -37,6 +42,7 @@
         </div>
       </div>
       <!--SUB BUSINESS-->
+      <!--ADD BUSINESS-->
       <div
         class="collapse"
         id="navbarToggleExternalContent-business"
@@ -45,9 +51,9 @@
         aria-controls="navbarToggleExternalContent"
         aria-expanded="false"
       >
-        <div class="row mt-2" (click)="showAddBusinessComponent()">
+        <div class="row mt-2" (click)="showComponent('addBusiness')">
           <div class="col-1 ms-4" style="width: 2rem">
-            <i class="bi bi-building-add"></i>
+            <i class="bi bi-building-fill-add"></i>
           </div>
           <div class="col">
             <span class="nav-txt mx-auto" id="sigin-msg">
@@ -56,7 +62,28 @@
           </div>
         </div>
       </div>
+      <!--BUSINESS MANAGEMENT-->
+      <div
+        class="collapse"
+        id="navbarToggleExternalContent-business"
+        data-bs-toggle="collapse"
+        data-bs-target="#navbarToggleExternalContent"
+        aria-controls="navbarToggleExternalContent"
+        aria-expanded="false"
+      >
+        <div class="row mt-2" (click)="showComponent('biManagement')">
+          <div class="col-1 ms-4" style="width: 2rem">
+            <i class="bi bi-building-fill-gear"></i>
+          </div>
+          <div class="col">
+            <span class="nav-txt mx-auto" id="sigin-msg">
+              {{ "business-managment-option" | translate }}
+            </span>
+          </div>
+        </div>
+      </div>
       <!--END SUB BUSINESS-->
+      <!--MANAGE USERS-->
       <div class="row mt-3">
         <div class="col-1" style="width: 2rem">
           <i class="bi bi-people-fill"></i>
@@ -67,8 +94,20 @@
           </span>
         </div>
       </div>
+       <!--SIGN OUT-->
+      <div class="row mt-3" (click)="logOut()">
+        <div class="col-1" style="width: 2rem">
+          <i class="bi bi-door-open-fill"></i>
+        </div>
+        <div class="col">
+          <span class="nav-txt mx-auto" id="sigin-msg">
+            {{ "navbar-signout" | translate }}
+          </span>
+        </div>
+      </div>
     </div>
   </div>
   <!-- END MASTER COLLAPSE-->
 </div>
 <app-business *ngIf="vvAddBusinessComponent"></app-business>
+<app-bi-management-options *ngIf="vvBIManagementOptionsComponent"></app-bi-management-options>

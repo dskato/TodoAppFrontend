@@ -20,13 +20,14 @@ import { AdminPanelComponent } from './screens/admin/admin-panel/admin-panel.com
 import { CheckInComponent } from './screens/checkin/check-in/check-in.component';
 import { UnauthorizedComponent } from './screens/unauthorized/unauthorized.component';
 import { BusinessComponent } from './screens/admin/business/business.component';
+import { BiManagementOptionsComponent } from './screens/admin/bi-management-options/bi-management-options.component';
 
 export function HttpLoaderFactory(http: HttpClient) {
   return new TranslateHttpLoader(http, './assets/i18n/', '.json');
 }
 
 @NgModule({
-  declarations: [AppComponent, LoginComponent, SigninComponent, RecoverPasswordComponent, AdminPanelComponent, CheckInComponent, UnauthorizedComponent, BusinessComponent],
+  declarations: [AppComponent, LoginComponent, SigninComponent, RecoverPasswordComponent, AdminPanelComponent, CheckInComponent, UnauthorizedComponent, BusinessComponent, BiManagementOptionsComponent],
   imports: [
     BrowserModule,
     FormsModule,

@@ -3,6 +3,12 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Country, City, State } from 'country-state-city';
 import { AdminService } from 'src/app/services/api/admin/admin.service';
 import { UserDto } from 'src/app/interfaces/user-dto';
+import { TokenService } from 'src/app/services/token/token.service';
+import { SaveBusiness } from 'src/app/interfaces/save-business';
+import { ToastrService } from 'ngx-toastr';
+import { AssignUser } from 'src/app/interfaces/assign-user';
+import { TranslateService } from '@ngx-translate/core';
+
 
 @Component({
   selector: 'app-business',
@@ -22,8 +28,12 @@ export class BusinessComponent {
 
   constructor(
     private formBuilder: FormBuilder,
-    private adminService: AdminService
+    private adminService: AdminService,
+    private tokenService: TokenService,
+    private toastr: ToastrService,
+    private translateService: TranslateService
   ) {
+    this.tokenService.redirectIfNotValid('/login');
     this.addBusinessForm = this.formBuilder.group({
       bname: ['', [Validators.required]],
       bdescription: [],
@@ -33,14 +43,14 @@ export class BusinessComponent {
       bzipcode: [],
       baddress: ['', [Validators.required]],
       bphone: [],
-      bemail: [],
-      brepresentative: [Validators.required]
+      bemail: ['', [Validators.required]],
+      brepresentative: [Validators.required],
     });
     this.coutryList = Country.getAllCountries();
 
     this.adminService.getAssignableUsers().subscribe(
       (response) => {
-        this.userList = response.data as unknown  as UserDto[];
+        this.userList = response.data as unknown as UserDto[];
       },
       (error) => {
         console.log(error);
@@ -58,5 +68,68 @@ export class BusinessComponent {
       this.sCountry.isoCode,
       this.sState.isoCode
     );
+  }
+
+  saveBusiness() {
+    var saveBusinessDto = {} as SaveBusiness;
+    if (this.addBusinessForm.valid) {
+      var representativeUser =
+        this.addBusinessForm.get('brepresentative')?.value;
+      var sCountry = this.addBusinessForm.get('bcountry')?.value;
+      var sState = this.addBusinessForm.get('bstate')?.value;
+      var sCity = this.addBusinessForm.get('bcity')?.value;
+
+      saveBusinessDto.name = this.addBusinessForm.get('bname')?.value;
+      saveBusinessDto.representativeName =
+        representativeUser.firstName + ' ' + representativeUser.lastName;
+      saveBusinessDto.description =
+        this.addBusinessForm.get('bdescription')?.value;
+      saveBusinessDto.address = this.addBusinessForm.get('baddress')?.value;
+      saveBusinessDto.country = sCountry.name;
+      saveBusinessDto.state = sState.name;
+      saveBusinessDto.city = sCity.name;
+      saveBusinessDto.zipCode = this.addBusinessForm.get('bzipcode')?.value;
+      saveBusinessDto.phone = this.addBusinessForm.get('bphone')?.value;
+      saveBusinessDto.email = this.addBusinessForm.get('bemail')?.value;
+
+      //Add business
+      this.adminService.saveBusiness(saveBusinessDto).subscribe(
+        (response) => {
+          if (response.code == 200) {
+            var businessId = response.data;
+            var assignUserDto = {} as AssignUser;
+            assignUserDto.idBusiness = parseInt(businessId);
+            assignUserDto.idUser = representativeUser.idUser;
+            assignUserDto.isRepresentative = true;
+            //Make selected user representative
+            this.adminService.makeUserRepresentative(assignUserDto).subscribe(
+              (response) => {
+                if (response.code == 200) {
+                  this.toastr.success(
+                    this.translateService.instant('business-succesfully'),
+                    'Ok'
+                  );
+                } else {
+                  this.toastr.error(response.data, 'Error');
+                }
+              },
+              (error) => {
+                console.log(error);
+              }
+            );
+          } else {
+            this.toastr.error(response.data, 'Error');
+          }
+        },
+        (error) => {
+          console.log(error);
+        }
+      );
+    } else {
+      this.toastr.error(
+        this.translateService.instant('business-add-description'),
+        'Error'
+      );
+    }
   }
 }

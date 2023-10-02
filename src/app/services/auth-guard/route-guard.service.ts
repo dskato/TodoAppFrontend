@@ -25,15 +25,24 @@ export class RouteGuardService implements CanActivate {
       this.router.navigate(['/unauthorized']);
       return false;
     }
-   
   }
 
-  redirectBasedOnRole() {
+  logOut() {
+    this.tokenService.removeToken();
+    this.router.navigate(['/login']);
+  }
+
+  redirectBasedOnRole(): void {
+    var token = this.tokenService.getToken();
+    if (token == '') {
+      return;
+    }
+    
     const role = this.tokenService.getUserRole();
     if (role == 'ADMIN' || role == 'SUPERADMIN') {
-      this.tokenService.redirectIfValid('/admin-panel');
+      this.router.navigate(['/admin-panel']);
     } else if (role == 'USER  ') {
-      this.tokenService.redirectIfValid('/check-in');
+      this.router.navigate(['/check-in']);
     }
   }
 }

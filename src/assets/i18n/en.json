@@ -17,15 +17,18 @@
   "sigin-phone":"Phone",
   "sigin-address":"Address",
   "sigin-account_info":"Account information",
+  "sigin-business":"Assigned business",
   "sigin-validation-firstname":"Firstname is required.",
   "sigin-validation-lastname":"Lastname is required",
   "sigin-validation-phone":"Phone is required.",
   "sigin-validation-address":"Address is required.",
   "sigin-validation-dateofbirth":"Birthdate is required.",
+  "sigin-validation-business":"Business is required.",
   "sigin-validation-email":"Email is required.",
   "sigin-validation-email-format":"Invalid email format.",
   "sigin-validation-password":"Password is required.",
   "sigin-validation-password-format":"Password must be at least 8 characters long.",
+  "sigin-NOTOK":"All fields are required",
   "sigin-OK":"User registered succesfully!",
 
   "rpassword-title":"Restore password",
@@ -44,21 +47,25 @@
 
   "navbar-business":"Manage business",
   "navbar-users":"Manage users",
+  "navbar-signout":"Sign out",
 
   "business-add-title":"Add a new business",
   "business-add-description":"Fields with * are required",
+  "business-succesfully":"Business added succesfully!",
 
-  "businessform-name":"Business name",
+  "businessform-name":"Business name*",
   "businessform-description":"Description",
-  "businessform-country":"Country",
-  "businessform-state":"State",
-  "businessform-city":"City",
+  "businessform-country":"Country*",
+  "businessform-state":"State*",
+  "businessform-city":"City*",
   "businessform-zipcode":"Zip code",
-  "businessform-representative":"Representative",
+  "businessform-representative":"Representative*",
   "businessform-phone":"Phone",
-  "businessform-email":"Email",
-  "businessform-address":"Address",
-  "businessform-btn-save":"Save business"
+  "businessform-email":"Email*",
+  "businessform-address":"Address*",
+  "businessform-btn-save":"Save business",
+
+  "business-managment-option":"Business management options"
 
 
   

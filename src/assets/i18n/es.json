@@ -17,16 +17,19 @@
   "sigin-phone":"Telefono",
   "sigin-address":"Direccion",
   "sigin-account_info":"Informacion de la cuenta",
+  "sigin-business":"Empresa asignada",
   "sigin-validation-firstname":"El nombre es requerido.",
   "sigin-validation-lastname":"El apellido es requerido.",
   "sigin-validation-phone":"El telefono es requerido.",
   "sigin-validation-address":"La direccion es requerida.",
   "sigin-validation-dateofbirth":"La fecha de nacimiento es requerida.",
+  "sigin-validation-business":"La empresa es requerida.",
   "sigin-validation-email":"El correo es requerido.",
   "sigin-validation-email-format":"Formato de correo invalido.",
   "sigin-validation-password":"La contraseña es requerida",
   "sigin-validation-password-format":"La contraseña debe contener minimo 8 caracteres.",
   "sigin-OK":"Usuario registrado correctamente!",
+  "sigin-NOTOK":"Todos los campos son requeridos",
 
   "rpassword-title":"Restablecer contraseña",
   "rpassword-info":"Ingresa tu correo electronico y nosotros enviaremos un codigo para restablecer tu contraseña.",
@@ -44,21 +47,24 @@
 
   "navbar-business":"Gestionar empresa",
   "navbar-users":"Gestionar usuarios",
+  "navbar-signout":"Cerrar sesion",
 
   "business-add-title":"Agregar una nueva empresa",
   "business-add-description":"Los campos con * son requeridos",
+  "business-succesfully":"Empresa agregada de manera satisfactoria!",
 
-  "businessform-name":"Nombre de la empresa",
+  "businessform-name":"Nombre de la empresa*",
   "businessform-description":"Descripcion",
-  "businessform-country":"Pais",
-  "businessform-state":"Provincia",
-  "businessform-city":"Ciudad",
+  "businessform-country":"Pais*",
+  "businessform-state":"Provincia*",
+  "businessform-city":"Ciudad*",
   "businessform-zipcode":"Codigo postal",
-  "businessform-representative":"Representante",
+  "businessform-representative":"Representante*",
   "businessform-phone":"Telefono",
-  "businessform-email":"Correo electrónico",
-  "businessform-address":"Direccion",
-  "businessform-btn-save":"Guardar empresa"
+  "businessform-email":"Correo electrónico*",
+  "businessform-address":"Direccion*",
+  "businessform-btn-save":"Guardar empresa",
 
+  "business-managment-option":"Opciones de gestion de empresa"
 
 }

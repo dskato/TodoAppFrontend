@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { LanguageService } from 'src/app/services/language.service';
+import { RouteGuardService } from 'src/app/services/auth-guard/route-guard.service';
 
 @Component({
   selector: 'app-admin-panel',
@@ -7,15 +9,25 @@ import { Component } from '@angular/core';
 })
 export class AdminPanelComponent {
 
-  vvAddBusinessComponent: boolean = true;
+  vvAddBusinessComponent: boolean = false;
+  vvBIManagementOptionsComponent: boolean = true;
   //vvUserComponent: boolean = false;
 
-  constructor(){
+  constructor(private languageService: LanguageService, private routeGuardService: RouteGuardService){
 
   }
 
 
-  showAddBusinessComponent(){
-    this.vvAddBusinessComponent = true;
+  showComponent(componentName: string) {
+    this.vvAddBusinessComponent = componentName === 'addBusiness';
+    this.vvBIManagementOptionsComponent = componentName === 'biManagement';
+  }
+
+  switchLanguage() {
+    this.languageService.switchLanguage();
+  }
+
+  logOut(){
+    this.routeGuardService.logOut();
   }
 }
