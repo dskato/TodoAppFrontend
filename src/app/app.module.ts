@@ -1,4 +1,5 @@
 import { NgModule } from '@angular/core';
+import { MatDialogModule } from '@angular/material/dialog';
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule, HttpClient } from '@angular/common/http';
 import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
@@ -8,6 +9,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ToastrModule } from 'ngx-toastr';
 import { CommonModule } from '@angular/common';
+
 
 
 
@@ -21,15 +23,18 @@ import { CheckInComponent } from './screens/checkin/check-in/check-in.component'
 import { UnauthorizedComponent } from './screens/unauthorized/unauthorized.component';
 import { BusinessComponent } from './screens/admin/business/business.component';
 import { BiManagementOptionsComponent } from './screens/admin/bi-management-options/bi-management-options.component';
+import { EditBusinessDialogComponent } from './screens/dialogs/admin/edit-business-dialog/edit-business-dialog.component';
+import { AssignUsersDialogComponent } from './screens/dialogs/admin/assign-users-dialog/assign-users-dialog.component';
 
 export function HttpLoaderFactory(http: HttpClient) {
   return new TranslateHttpLoader(http, './assets/i18n/', '.json');
 }
 
 @NgModule({
-  declarations: [AppComponent, LoginComponent, SigninComponent, RecoverPasswordComponent, AdminPanelComponent, CheckInComponent, UnauthorizedComponent, BusinessComponent, BiManagementOptionsComponent],
+  declarations: [AppComponent, LoginComponent, SigninComponent, RecoverPasswordComponent, AdminPanelComponent, CheckInComponent, UnauthorizedComponent, BusinessComponent, BiManagementOptionsComponent, EditBusinessDialogComponent, AssignUsersDialogComponent],
   imports: [
     BrowserModule,
+    MatDialogModule,
     FormsModule,
     ReactiveFormsModule,
     AppRoutingModule,

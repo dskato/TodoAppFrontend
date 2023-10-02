@@ -2,6 +2,8 @@ import { Component } from '@angular/core';
 import { SaveBusiness } from 'src/app/interfaces/save-business';
 import { TokenService } from 'src/app/services/token/token.service';
 import { AdminService } from 'src/app/services/api/admin/admin.service';
+import { EditBusinessDialogComponent } from '../../dialogs/admin/edit-business-dialog/edit-business-dialog.component';
+import { MatDialog } from '@angular/material/dialog';
 
 @Component({
   selector: 'app-bi-management-options',
@@ -13,7 +15,8 @@ export class BiManagementOptionsComponent {
 
   constructor(
     private tokenService: TokenService,
-    private adminService: AdminService
+    private adminService: AdminService,
+    private dialog: MatDialog
   ) {
     adminService
       .getAllBusinessByUser(parseInt(tokenService.getUserId()))
@@ -26,5 +29,14 @@ export class BiManagementOptionsComponent {
         }
       );
   }
-  
+
+  editBusiness(business: any) {
+    const dialogRef = this.dialog.open(EditBusinessDialogComponent,{
+      width:'600px'
+    });
+
+    dialogRef.afterClosed().subscribe((result) => {
+      console.log(`Dialog result: ${result}`);
+    });
+  }
 }

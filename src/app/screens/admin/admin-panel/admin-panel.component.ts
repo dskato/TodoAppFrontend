@@ -12,6 +12,7 @@ export class AdminPanelComponent {
   vvAddBusinessComponent: boolean = false;
   vvBIManagementOptionsComponent: boolean = true;
   //vvUserComponent: boolean = false;
+  vvEditBusinessDialog: boolean = true;
 
   constructor(private languageService: LanguageService, private routeGuardService: RouteGuardService){
 
@@ -21,6 +22,10 @@ export class AdminPanelComponent {
   showComponent(componentName: string) {
     this.vvAddBusinessComponent = componentName === 'addBusiness';
     this.vvBIManagementOptionsComponent = componentName === 'biManagement';
+
+    //delete
+    this.vvEditBusinessDialog = componentName === 'editBiDialog';
+
   }
 
   switchLanguage() {

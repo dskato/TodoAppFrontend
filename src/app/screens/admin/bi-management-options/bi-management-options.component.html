@@ -70,7 +70,7 @@
       </div>
       <div
         class="row biCont-ls mx-2 my-2 align-items-center"
-        style="max-height: 90vh"
+        style="max-height: 60vh;overflow-y: auto;"
       >
         <div class="row my-2" *ngFor="let business of businessList">
           <!-- Show only on phones -->
@@ -87,7 +87,7 @@
           <div class="col-auto d-block d-sm-none">
             <div class="row">
               <div class="col">
-                <i class="bi bi-pencil-fill"></i>
+                <i class="bi bi-pencil-fill" (click)="editBusiness(business)"></i>
               </div>
               <div class="col">
                 <i class="bi bi-people-fill"></i>
@@ -135,7 +135,7 @@
           <div class="col-auto d-none d-sm-block">
             <div class="row">
               <div class="col">
-                <i class="bi bi-pencil-fill"></i>
+                <i class="bi bi-pencil-fill" (click)="editBusiness(business)"></i>
               </div>
               <div class="col">
                 <i class="bi bi-people-fill"></i>

@@ -1,0 +1,16 @@
+.btn {
+    background-color: #222222;
+    border: 1px solid #222222;
+  }
+  .btn:active {
+    background-color: #474747;
+  }
+  #btn-saveb {
+    background-color: white;
+    color: #222222;
+  }
+  #btn-saveb:hover {
+    background-color: #222222;
+    color: white;
+  }
+  
