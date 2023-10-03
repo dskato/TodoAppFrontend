@@ -18,8 +18,12 @@ export class BiManagementOptionsComponent {
     private adminService: AdminService,
     private dialog: MatDialog
   ) {
-    adminService
-      .getAllBusinessByUser(parseInt(tokenService.getUserId()))
+    this.fillBusinessList();
+  }
+
+  fillBusinessList() {
+    this.adminService
+      .getAllBusinessByUser(parseInt(this.tokenService.getUserId()))
       .subscribe(
         (response) => {
           this.businessList = response.data as unknown as SaveBusiness[];
@@ -31,12 +35,13 @@ export class BiManagementOptionsComponent {
   }
 
   editBusiness(business: any) {
-    const dialogRef = this.dialog.open(EditBusinessDialogComponent,{
-      width:'600px'
+    const dialogRef = this.dialog.open(EditBusinessDialogComponent, {
+      width: '600px',
+      data: business,
     });
 
     dialogRef.afterClosed().subscribe((result) => {
-      console.log(`Dialog result: ${result}`);
+      this.fillBusinessList();
     });
   }
 }

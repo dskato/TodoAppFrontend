@@ -76,7 +76,8 @@
   "bmo-ls-options":"Opciones",
 
   "businessform-edit-title":"Actualizar la Informacion de la empresa.",
-  "businessform-edit-updtbutton": "Update business"
+  "businessform-edit-updtbutton": "Update business",
+  "businessform-edit-ok": "Empresa actualizada satisfactoriamente!"
 
 
 }

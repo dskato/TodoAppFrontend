@@ -23,6 +23,7 @@
               placeholder="High Tide studios"
               formControlName="bname"
               name="bname"
+              
             />
             <label for="bdescription-inpt" class="form-label mt-1">{{
               "businessform-description" | translate
@@ -77,7 +78,7 @@
               name="bcity-ls"
               formControlName="bcity"
               aria-label="Select city"
-              (change)="onStateSelection()"
+              (change)="onCitySelection()"
             >
               <option *ngFor="let city of cityList" [ngValue]="city">
                 {{ city.name }}
@@ -129,7 +130,7 @@
             />
             
             <div class="d-grid gap-2 col-6 mx-auto my-3">
-              <button class="btn btn-primary" type="button" id="btn-saveb" >
+              <button class="btn btn-primary" type="button" id="btn-saveb" (click)="updateBusiness()" >
                 {{ "businessform-edit-updtbutton" | translate }}
               </button>
             </div>

@@ -18,6 +18,7 @@ export class AdminService {
   private getAssignableUsersRes: string =
     'System/User/GetUsersAssignableToBusiness';
   private saveBusinessRes: string = 'System/Business/SaveBusiness';
+  private updateBusinessRes: string = 'System/Business/UpdateBusiness';
   private assignUserToBusinessRes: string =
     'System/Business/AssignUserToBusiness';
   private makeUserRepresentativeRes: string =
@@ -51,6 +52,19 @@ export class AdminService {
 
     return this.http.post<BaseResponse<string>>(
       this.systemApiUrl + this.saveBusinessRes,
+      businessDto,
+      options
+    );
+  }
+
+  updateBusiness(businessDto: SaveBusiness): Observable<BaseResponse<string>> {
+    const headers = new HttpHeaders({
+      Authorization: `Bearer ${this.tokenService.getToken()}`,
+    });
+    const options = { headers: headers };
+
+    return this.http.post<BaseResponse<string>>(
+      this.systemApiUrl + this.updateBusinessRes,
       businessDto,
       options
     );
