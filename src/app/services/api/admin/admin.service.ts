@@ -21,13 +21,15 @@ export class AdminService {
   private updateBusinessRes: string = 'System/Business/UpdateBusiness';
   private assignUserToBusinessRes: string =
     'System/Business/AssignUserToBusiness';
+  private unassignUserToBusinessRes: string =
+    'System/Business/UnassignUserToBusiness';
   private makeUserRepresentativeRes: string =
     'System/Business/MakeUserBusinessRepresentative';
   private getAllBusinessRes: string = 'System/Business/GetAllBusiness';
   private getAllBusinessByIdUserRes: string =
     'System/Business/GetAllBusinessByUserAndRole/';
-  private getAssignedUsersRes: string =
-    'System/User/GetAssignedUsers/';
+  private getAssignedUsersRes: string = 'System/User/GetAssignedUsers/';
+  private updateUserRoleRes: string = 'System/User/UpdateUserRole/';
 
   constructor(private http: HttpClient, private tokenService: TokenService) {
     this.authApiUrl = environment.AuthApi;
@@ -96,6 +98,21 @@ export class AdminService {
     );
   }
 
+  unassignUserToBusiness(
+    assignUserDto: AssignUser
+  ): Observable<BaseResponse<string>> {
+    const headers = new HttpHeaders({
+      Authorization: `Bearer ${this.tokenService.getToken()}`,
+    });
+    const options = { headers: headers };
+
+    return this.http.post<BaseResponse<string>>(
+      this.systemApiUrl + this.unassignUserToBusinessRes,
+      assignUserDto,
+      options
+    );
+  }
+
   getAllBusiness(): Observable<BaseResponse<string>> {
     return this.http.get<BaseResponse<string>>(
       this.systemApiUrl + this.getAllBusinessRes
@@ -122,6 +139,21 @@ export class AdminService {
 
     return this.http.get<BaseResponse<string>>(
       this.systemApiUrl + this.getAssignedUsersRes + idBusiness,
+      options
+    );
+  }
+
+  updateUserRoles(
+    idUser: number,
+    idRole: number
+  ): Observable<BaseResponse<string>> {
+    const headers = new HttpHeaders({
+      Authorization: `Bearer ${this.tokenService.getToken()}`,
+    });
+    const options = { headers: headers };
+
+    return this.http.get<BaseResponse<string>>(
+      this.systemApiUrl + this.updateUserRoleRes + idUser + '/' + idRole,
       options
     );
   }

@@ -9,7 +9,6 @@ import { ToastrService } from 'ngx-toastr';
 import { AssignUser } from 'src/app/interfaces/assign-user';
 import { TranslateService } from '@ngx-translate/core';
 
-
 @Component({
   selector: 'app-business',
   templateUrl: './business.component.html',
@@ -20,7 +19,6 @@ export class BusinessComponent {
   coutryList!: any;
   stateList!: any;
   cityList!: any;
-  userList!: UserDto[];
 
   //---
   sCountry!: any;
@@ -29,11 +27,9 @@ export class BusinessComponent {
   constructor(
     private formBuilder: FormBuilder,
     private adminService: AdminService,
-    private tokenService: TokenService,
     private toastr: ToastrService,
     private translateService: TranslateService
   ) {
-    
     this.addBusinessForm = this.formBuilder.group({
       bname: ['', [Validators.required]],
       bdescription: [],
@@ -43,19 +39,11 @@ export class BusinessComponent {
       bzipcode: [],
       baddress: ['', [Validators.required]],
       bphone: [],
-      bemail: ['', [Validators.required]],
-      brepresentative: [Validators.required],
+      bemail: ['', [Validators.required]]
     });
     this.coutryList = Country.getAllCountries();
 
-    this.adminService.getAssignableUsers().subscribe(
-      (response) => {
-        this.userList = response.data as unknown as UserDto[];
-      },
-      (error) => {
-        console.log(error);
-      }
-    );
+    
   }
 
   onCountrySelection() {
@@ -73,8 +61,7 @@ export class BusinessComponent {
   saveBusiness() {
     var saveBusinessDto = {} as SaveBusiness;
     if (this.addBusinessForm.valid) {
-      var representativeUser =
-        this.addBusinessForm.get('brepresentative')?.value;
+      
       var sCountry = this.addBusinessForm.get('bcountry')?.value;
       var sState = this.addBusinessForm.get('bstate')?.value;
       var sCity = this.addBusinessForm.get('bcity')?.value;
@@ -94,6 +81,28 @@ export class BusinessComponent {
       this.adminService.saveBusiness(saveBusinessDto).subscribe(
         (response) => {
           if (response.code == 200) {
+            this.toastr.success(
+              this.translateService.instant('business-succesfully'),
+              'Ok'
+            );
+          } else {
+            this.toastr.error(response.data, 'Error');
+          }
+        },
+        (error) => {
+          console.log(error);
+        }
+      );
+    } else {
+      this.toastr.error(
+        this.translateService.instant('business-add-description'),
+        'Error'
+      );
+    }
+  }
+}
+
+/*
             var businessId = response.data;
             var assignUserDto = {} as AssignUser;
             assignUserDto.idBusiness = parseInt(businessId);
@@ -115,19 +124,13 @@ export class BusinessComponent {
                 console.log(error);
               }
             );
-          } else {
-            this.toastr.error(response.data, 'Error');
-          }
-        },
-        (error) => {
-          console.log(error);
-        }
-      );
-    } else {
-      this.toastr.error(
-        this.translateService.instant('business-add-description'),
-        'Error'
-      );
-    }
-  }
-}
+
+            this.adminService.getAssignableUsers().subscribe(
+      (response) => {
+        this.userList = response.data as unknown as UserDto[];
+      },
+      (error) => {
+        console.log(error);
+      }
+    );
+            */

@@ -127,21 +127,8 @@
             formControlName="bemail"
             name="bemail"
           />
-          <label for="brepresentative-ls" class="form-label mt-1">{{
-            "businessform-representative" | translate
-          }}</label>
-          <select
-            class="form-select"
-            id="brepresentative-ls"
-            name="brepresentative-ls"
-            formControlName="brepresentative"
-            aria-label="Select representative user"
-            
-          >
-            <option *ngFor="let user of userList" [ngValue]="user">
-              {{ user.firstName + ' ' + user.lastName + ' - ' + user.email }}
-            </option>
-          </select>
+          
+          
           <div class="d-grid gap-2 col-6 mx-auto my-3">
             <button class="btn btn-primary" type="button" id="btn-saveb" (click)="saveBusiness()" >
               {{ "businessform-btn-save" | translate }}

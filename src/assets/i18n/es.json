@@ -86,10 +86,12 @@
   "assignusr-list-title": "Lista de usuarios asignados",
   "assignusr-list-nousrs": "No existen usuarios asignados a la empresa!",
   "assignusr-ok": "Usuario asignado satisfactoriamente!",
+  "unassignusr-ok": "El usuario se desasigno de la empresa!",
   "assignusr-ls-lbl-name": "Nombre",
   "assignusr-ls-lbl-email": "Correo",
   "assignusr-ls-lbl-role": "Rol",
-  "assignusr-ls-lbl-action": "Opciones"
+  "assignusr-ls-lbl-action": "Opciones",
+  "assignusr-ls-rolechg": "Rol de usuario actualizado satisfactoriamente!"
 
 
 

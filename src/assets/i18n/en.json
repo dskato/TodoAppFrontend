@@ -86,10 +86,12 @@
   "assignusr-list-title": "List of assigned users",
   "assignusr-list-nousrs": "There is no user assigned to the business!",
   "assignusr-ok": "User assigned succesfully!",
+  "unassignusr-ok": "User unassigned succesfully!",
   "assignusr-ls-lbl-name": "Name",
   "assignusr-ls-lbl-email": "Email",
   "assignusr-ls-lbl-role": "Role",
-  "assignusr-ls-lbl-action": "Action"
+  "assignusr-ls-lbl-action": "Action",
+  "assignusr-ls-rolechg": "User role changed succesfully!"
 
 
 }

@@ -80,7 +80,6 @@ export class AssignUsersDialogComponent implements OnInit {
     assignUserDto.idUser = this.selectedUser.idUser;
     assignUserDto.idBusiness = parseInt(this.currentBusiness.idBusiness);
     assignUserDto.isRepresentative = false;
-    console.log(assignUserDto);
     this.adminService.assignUserToBusiness(assignUserDto).subscribe(
       (response) => {
         if (response.code == 200) {
@@ -91,6 +90,50 @@ export class AssignUsersDialogComponent implements OnInit {
           //Call again the list and clear
           this.getAssignedUsers(this.currentBusiness.idBusiness);
           this.clearSelectedUser();
+        } else {
+          this.toastr.error(response.data, 'Error');
+        }
+      },
+      (error) => {
+        console.log(error);
+      }
+    );
+  }
+
+  unassignUserToBusiness(idUser: number) {
+    var assignUserDto = {} as AssignUser;
+    assignUserDto.idUser = idUser;
+    assignUserDto.idBusiness = parseInt(this.currentBusiness.idBusiness);
+    this.adminService.unassignUserToBusiness(assignUserDto).subscribe(
+      (response) => {
+        if (response.code == 200) {
+          this.toastr.success(
+            this.translateService.instant('unassignusr-ok'),
+            'Ok'
+          );
+          //Call again the list and clear
+          this.getAssignedUsers(this.currentBusiness.idBusiness);
+        } else {
+          this.toastr.error(response.data, 'Error');
+        }
+      },
+      (error) => {
+        console.log(error);
+      }
+    );
+  }
+
+  updateUserRole(idUser: number, idSelectedRole: number) {
+    this.adminService.updateUserRoles(idUser, idSelectedRole).subscribe(
+      (response) => {
+        console.log(response);
+        if (response.code == 200) {
+          if (response.data == 'Ok') {
+            this.toastr.success(
+              this.translateService.instant('assignusr-ls-rolechg'),
+              'Ok'
+            );
+          }
         } else {
           this.toastr.error(response.data, 'Error');
         }
@@ -116,6 +159,7 @@ export class AssignUsersDialogComponent implements OnInit {
           if (response.data.length == 0) {
             this.vvLabelNoUsersAssigned = true;
           } else {
+            this.vvLabelNoUsersAssigned = false;
             if (Array.isArray(response.data)) {
               this.assignedUserLs = response.data.map((user: any) => {
                 const simplifiedRole: RoleDto = {
@@ -131,7 +175,6 @@ export class AssignUsersDialogComponent implements OnInit {
                   roleEntity: simplifiedRole,
                 } as UserDto;
               });
-              console.log(this.assignedUserLs);
             }
           }
         }

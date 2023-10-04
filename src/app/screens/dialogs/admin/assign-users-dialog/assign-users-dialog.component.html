@@ -83,22 +83,22 @@
           </div>
           <!-- ######## END Show only on phones - title labels ############ -->
           <!-- ######## Show on PC - title labels ############ -->
-          <div class="col d-none d-sm-block">
+          <div class="col d-none d-sm-block text-center">
             <span class="req-fields mx-auto">
               {{ "assignusr-ls-lbl-name" | translate }}
             </span>
           </div>
-          <div class="col d-none d-sm-block">
+          <div class="col d-none d-sm-block text-center">
             <span class="req-fields mx-auto">
               {{ "assignusr-ls-lbl-email" | translate }}
             </span>
           </div>
-          <div class="col d-none d-sm-block">
+          <div class="col d-none d-sm-block text-center">
             <span class="req-fields mx-auto">
               {{ "assignusr-ls-lbl-role" | translate }}
             </span>
           </div>
-          <div class="col d-none d-sm-block">
+          <div class="col d-none d-sm-block text-center">
             <span class="req-fields mx-auto">
               {{ "assignusr-ls-lbl-action" | translate }}
             </span>
@@ -106,10 +106,10 @@
           <!-- ######## END Show on PC - title labels ############ -->
         </div>
         <!-- ########  USER LIST ############ -->
-        <div *ngIf="!vvLabelNoUsersAssigned" class="row my-2 ">
+        <div *ngIf="!vvLabelNoUsersAssigned" class="row my-2">
           <div
             *ngFor="let user of assignedUserLs"
-            class="row my-2 mx-auto align-items-center"
+            class="row my-2 mx-auto align-items-center justify-content-center itemls-cont"
           >
             <!-- ######## Show only on phone - values ######## -->
             <div class="col d-block d-sm-none">
@@ -121,8 +121,8 @@
                 disabled
               />
             </div>
-            
-            <div class="col d-block d-sm-none" >
+
+            <div class="col d-block d-sm-none">
               <select
                 class="form-control"
                 name="role"
@@ -133,14 +133,72 @@
                 </option>
               </select>
             </div>
-            <div class="col-auto d-block d-sm-none" style="width: 0.8rem;" >
+            <div class="col-auto d-block d-sm-none" style="width: 0.8rem">
               <div class="row">
                 <div class="col">
-                  <i class="bi bi-save2"></i>
+                  <i
+                    class="bi bi-save2"
+                    (click)="
+                      updateUserRole(user.idUser, user.roleEntity.idRole)
+                    "
+                  ></i>
+                </div>
+                <div class="col">
+                  <i class="bi bi-person-dash my-2" (click)="unassignUserToBusiness(user.idUser)"></i>
                 </div>
               </div>
             </div>
-            <!-- ######## Show only on phone - values ######## -->
+
+            <!-- ######## END Show only on phone - values ######## -->
+
+            <!-- ######## Show only on  PC - values ######## -->
+            <div class="col d-none d-sm-block">
+              <input
+                class="form-control"
+                type="text"
+                name="bname"
+                [value]="user.firstName + ' ' + user.lastName"
+                disabled
+              />
+            </div>
+            <div class="col d-none d-sm-block">
+              <input
+                class="form-control"
+                type="text"
+                name="bname"
+                [value]="user.email"
+                disabled
+              />
+            </div>
+            <div class="col d-none d-sm-block">
+              <select
+                class="form-control"
+                name="role"
+                [(ngModel)]="user.roleEntity.idRole"
+              >
+                <option *ngFor="let role of roleList" [value]="role.idRole">
+                  {{ role.name }}
+                </option>
+              </select>
+            </div>
+            <div class="col-auto d-none d-sm-block">
+              <div class="row">
+                <div class="col">
+                  <i
+                    class="bi bi-save2"
+                    (click)="
+                      updateUserRole(user.idUser, user.roleEntity.idRole)
+                    "
+                  ></i>
+                </div>
+                <div class="col">
+                  <i class="bi bi-person-dash my-2" (click)="unassignUserToBusiness(user.idUser)"></i>
+                </div>
+                
+              </div>
+            </div>
+
+            <!-- ######## END Show only on  PC - values ######## -->
           </div>
         </div>
         <!-- ######## END USER LIST ############ -->
