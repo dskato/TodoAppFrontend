@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { LanguageService } from 'src/app/services/language.service';
 import { RouteGuardService } from 'src/app/services/auth-guard/route-guard.service';
+import { TokenService } from 'src/app/services/token/token.service';
 
 @Component({
   selector: 'app-admin-panel',
@@ -14,8 +15,8 @@ export class AdminPanelComponent {
   //vvUserComponent: boolean = false;
   vvEditBusinessDialog: boolean = true;
 
-  constructor(private languageService: LanguageService, private routeGuardService: RouteGuardService){
-
+  constructor(private languageService: LanguageService, private routeGuardService: RouteGuardService, private tokenService: TokenService){
+    this.tokenService.redirectIfNotValid('/login');
   }
 
 

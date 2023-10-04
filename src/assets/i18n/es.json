@@ -77,7 +77,20 @@
 
   "businessform-edit-title":"Actualizar la Informacion de la empresa.",
   "businessform-edit-updtbutton": "Update business",
-  "businessform-edit-ok": "Empresa actualizada satisfactoriamente!"
+  "businessform-edit-ok": "Empresa actualizada satisfactoriamente!",
+
+  "assignusr-title": "Asignar usuarios a una empresa",
+  "assignusr-info": "Asignar un usuario a la empresa, gestione sus roles",
+  "assignusr-lbl": "Selecione un usuario",
+  "assignusr-ph": "Escriba un nombre o correo",
+  "assignusr-list-title": "Lista de usuarios asignados",
+  "assignusr-list-nousrs": "No existen usuarios asignados a la empresa!",
+  "assignusr-ok": "Usuario asignado satisfactoriamente!",
+  "assignusr-ls-lbl-name": "Nombre",
+  "assignusr-ls-lbl-email": "Correo",
+  "assignusr-ls-lbl-role": "Rol",
+  "assignusr-ls-lbl-action": "Opciones"
+
 
 
 }

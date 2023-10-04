@@ -26,6 +26,8 @@ export class AdminService {
   private getAllBusinessRes: string = 'System/Business/GetAllBusiness';
   private getAllBusinessByIdUserRes: string =
     'System/Business/GetAllBusinessByUserAndRole/';
+  private getAssignedUsersRes: string =
+    'System/User/GetAssignedUsers/';
 
   constructor(private http: HttpClient, private tokenService: TokenService) {
     this.authApiUrl = environment.AuthApi;
@@ -108,6 +110,18 @@ export class AdminService {
 
     return this.http.get<BaseResponse<string>>(
       this.systemApiUrl + this.getAllBusinessByIdUserRes + idUser,
+      options
+    );
+  }
+
+  getUsersAssignedToBusiness(idBusiness: number) {
+    const headers = new HttpHeaders({
+      Authorization: `Bearer ${this.tokenService.getToken()}`,
+    });
+    const options = { headers: headers };
+
+    return this.http.get<BaseResponse<string>>(
+      this.systemApiUrl + this.getAssignedUsersRes + idBusiness,
       options
     );
   }

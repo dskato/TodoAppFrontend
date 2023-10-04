@@ -3,6 +3,7 @@ import { SaveBusiness } from 'src/app/interfaces/save-business';
 import { TokenService } from 'src/app/services/token/token.service';
 import { AdminService } from 'src/app/services/api/admin/admin.service';
 import { EditBusinessDialogComponent } from '../../dialogs/admin/edit-business-dialog/edit-business-dialog.component';
+import { AssignUsersDialogComponent } from '../../dialogs/admin/assign-users-dialog/assign-users-dialog.component';
 import { MatDialog } from '@angular/material/dialog';
 
 @Component({
@@ -44,4 +45,16 @@ export class BiManagementOptionsComponent {
       this.fillBusinessList();
     });
   }
+
+  assignUserToBusiness(business: any) {
+
+    const dialogRef = this.dialog.open(AssignUsersDialogComponent, {
+      width: '700px',
+      data: business,
+    });
+    dialogRef.afterClosed().subscribe((result) => {
+      
+    });
+  }
+
 }

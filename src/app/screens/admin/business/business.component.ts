@@ -33,7 +33,7 @@ export class BusinessComponent {
     private toastr: ToastrService,
     private translateService: TranslateService
   ) {
-    this.tokenService.redirectIfNotValid('/login');
+    
     this.addBusinessForm = this.formBuilder.group({
       bname: ['', [Validators.required]],
       bdescription: [],
@@ -80,8 +80,6 @@ export class BusinessComponent {
       var sCity = this.addBusinessForm.get('bcity')?.value;
 
       saveBusinessDto.name = this.addBusinessForm.get('bname')?.value;
-      saveBusinessDto.representativeName =
-        representativeUser.firstName + ' ' + representativeUser.lastName;
       saveBusinessDto.description =
         this.addBusinessForm.get('bdescription')?.value;
       saveBusinessDto.address = this.addBusinessForm.get('baddress')?.value;

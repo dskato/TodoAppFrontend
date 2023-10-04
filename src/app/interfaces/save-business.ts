@@ -1,7 +1,6 @@
 export interface SaveBusiness {
   idBusiness:number;
   name: string;
-  representativeName: string;
   description: string;
   address: string;
   city: string;

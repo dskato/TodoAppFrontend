@@ -77,5 +77,19 @@
 
   "businessform-edit-title": "Update business information",
   "businessform-edit-updtbutton": "Update business",
-  "businessform-edit-ok": "Business updated succesfully!"
+  "businessform-edit-ok": "Business updated succesfully!",
+
+  "assignusr-title": "Assign users to a business",
+  "assignusr-info": "Assign a users to a business also manage user roles.",
+  "assignusr-lbl": "Select a user",
+  "assignusr-ph": "Type an email or a name",
+  "assignusr-list-title": "List of assigned users",
+  "assignusr-list-nousrs": "There is no user assigned to the business!",
+  "assignusr-ok": "User assigned succesfully!",
+  "assignusr-ls-lbl-name": "Name",
+  "assignusr-ls-lbl-email": "Email",
+  "assignusr-ls-lbl-role": "Role",
+  "assignusr-ls-lbl-action": "Action"
+
+
 }

@@ -9,6 +9,8 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ToastrModule } from 'ngx-toastr';
 import { CommonModule } from '@angular/common';
+import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
+
 
 
 
@@ -34,13 +36,14 @@ export function HttpLoaderFactory(http: HttpClient) {
   declarations: [AppComponent, LoginComponent, SigninComponent, RecoverPasswordComponent, AdminPanelComponent, CheckInComponent, UnauthorizedComponent, BusinessComponent, BiManagementOptionsComponent, EditBusinessDialogComponent, AssignUsersDialogComponent],
   imports: [
     BrowserModule,
+    NgbModule,
     MatDialogModule,
     FormsModule,
     ReactiveFormsModule,
     AppRoutingModule,
     HttpClientModule,
     CommonModule,
-    BrowserAnimationsModule, // required animations module
+    BrowserAnimationsModule, // required animations module,
     ToastrModule.forRoot(),
     TranslateModule.forRoot({
       defaultLanguage: 'en',
