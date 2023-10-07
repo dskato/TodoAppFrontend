@@ -1,0 +1,173 @@
+<div class="container-fluid">
+  <div
+    class="row px-3 justify-content-center align-items-center"
+    style="min-height: 90vh"
+  >
+    <div class="user-cont col-md-8 mx-auto my-3">
+      <h5 class="cont-title mt-3">
+        {{ "usr-mngt-title" | translate }}
+      </h5>
+      <span class="req-fields mx-auto">
+        {{ "usr-mngt-description" | translate }}
+      </span>
+      <hr class="my-2" />
+      <h6 class="cont-title my-1">
+        {{ "usr-mngt-filter" | translate }}
+      </h6>
+      <hr class="my-2" />
+
+      <div class="row usr-lbls mx-1 my-2">
+        <!--###################################### TITLE LABELS # SHOW ONLY ON PHONES ######################################-->
+        <div class="col d-block d-sm-none text-center">
+          <span class="req-fields mx-auto ls-title">
+            {{ "usr-mngt-lbl-usr" | translate }}
+          </span>
+        </div>
+        <div class="col d-block d-sm-none text-center">
+          <span class="req-fields mx-auto ls-title">
+            {{ "usr-mngt-lbl-action" | translate }}
+          </span>
+        </div>
+        <!--###################################### END TITLE LABELS # SHOW ONLY ON PHONES ######################################-->
+
+        <!--###################################### TITLE LABELS # SHOW ON PC ######################################-->
+
+        <div class="col d-none d-sm-block text-center">
+          <span class="req-fields mx-auto ls-title">
+            {{ "usr-mngt-lbl-grl" | translate }}
+          </span>
+        </div>
+        
+        <div class="col-auto d-none d-sm-block">
+          <span class="req-fields mx-auto ls-title">
+            {{ "usr-mngt-lbl-action" | translate }}
+          </span>
+        </div>
+      </div>
+      <!--###################################### END TITLE LABELS # SHOW ON PC ######################################-->
+
+      <div
+        *ngFor="let user of userList"
+        class="row usr-item mx-1 my-2 align-items-center"
+      >
+        <!--###################################### VALUES # SHOW ONLY ON PHONES ######################################-->
+        <div class="col-auto d-block d-sm-none text-center">
+          <svg
+            class="img-fluid"
+            width="4rem"
+            height="4rem"
+            [data-jdenticon-value]="user.email"
+          ></svg>
+        </div>
+        <div class="col d-block d-sm-none text-left">
+          <div class="row">
+            <span class="req-fields mx-auto ls-item-title">
+              {{ user.firstName + " " + user.lastName }}
+            </span>
+            <span class="req-fields mx-auto ls-item-sub">
+              {{ user.email }}
+            </span>
+            <span class="req-fields mx-auto ls-item-sub">
+              {{ user.phoneNumber }}
+            </span>
+            <span class="req-fields mx-auto ls-item-sub">
+              {{
+                "Rate: " + user.hourlyRate + "$" + "  Role: " + user.roleName
+              }}
+            </span>
+          </div>
+        </div>
+        <div class="col-auto d-block d-sm-none">
+          <i class="bi bi-currency-dollar mx-1" (click)="assignHourlyRate(user)"></i>
+         <!-- <i class="bi bi-person-x-fill"></i> --> 
+        </div>
+        <!--###################################### END VALUES # SHOW ONLY ON PHONES ######################################-->
+
+        <!--###################################### VALUES # SHOW ON PC ######################################-->
+        <div class="col d-none d-sm-block">
+          <svg
+            class="img-fluid"
+            width="4rem"
+            height="4rem"
+            [data-jdenticon-value]="user.email"
+          ></svg>
+        </div>
+        <div class="col d-none d-sm-block text-center">
+          <span class="req-fields mx-auto ls-item-title">
+            {{ user.firstName + " " + user.lastName }}
+          </span>
+        </div>
+        <div class="col d-none d-sm-block ">
+          <span class="req-fields mx-auto ls-item-title">
+            {{ user.email }}
+          </span>
+        </div>
+        <div class="col d-none d-sm-block text-center">
+          <span class="req-fields mx-auto ls-item-title">
+            {{ user.phoneNumber }}
+          </span>
+        </div>
+        <div class="col d-none d-sm-block">
+          <span class="req-fields mx-auto ls-item-title">
+            {{ user.dateOfBirth }}
+          </span>
+        </div>
+        <div class="col d-none d-sm-block">
+          <span class="req-fields mx-auto ls-item-title">
+            {{ user.roleName }}
+          </span>
+        </div>
+        <div class="col d-none d-sm-block">
+          <span class="req-fields mx-auto ls-item-title">
+            {{ user.hourlyRate + "$" }}
+          </span>
+        </div>
+        <div class="col d-none d-sm-block">
+          <i class="bi bi-currency-dollar mx-1" (click)="assignHourlyRate(user)" ></i>
+          <!-- <i class="bi bi-person-x-fill"></i> --> 
+        </div>
+
+        <!--###################################### END VALUES # SHOW ON PC ######################################-->
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+<!--
+
+
+
+    <div class="col d-none d-sm-block">
+          <span class="req-fields mx-auto ls-title">
+            {{ "usr-mngt-lbl-name" | translate }}
+          </span>
+        </div>
+        <div class="col d-none d-sm-block">
+          <span class="req-fields mx-auto ls-title">
+            {{ "usr-mngt-lbl-email" | translate }}
+          </span>
+        </div>
+        <div class="col d-none d-sm-block">
+          <span class="req-fields mx-auto ls-title">
+            {{ "usr-mngt-lbl-phone" | translate }}
+          </span>
+        </div>
+        <div class="col d-none d-sm-block">
+          <span class="req-fields mx-auto ls-title">
+            {{ "usr-mngt-lbl-birthdate" | translate }}
+          </span>
+        </div>
+        <div class="col d-none d-sm-block">
+          <span class="req-fields mx-auto ls-title">
+            {{ "usr-mngt-lbl-role" | translate }}
+          </span>
+        </div>
+        <div class="col d-none d-sm-block">
+          <span class="req-fields mx-auto ls-title">
+            {{ "usr-mngt-lbl-hrate" | translate }}
+          </span>
+        </div>
+
+-->

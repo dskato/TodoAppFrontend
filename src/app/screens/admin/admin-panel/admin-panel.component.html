@@ -1,23 +1,22 @@
 <nav class="navbar navbar-dark bg-dark">
   <div class="container-fluid">
-      <div class="col-9" >
-        <button
-          class="navbar-toggler"
-          type="button"
-          data-bs-toggle="collapse"
-          data-bs-target="#navbarToggleExternalContent"
-          aria-controls="navbarToggleExternalContent"
-          aria-expanded="false"
-          aria-label="Toggle navigation"
-        >
-          <span class="navbar-toggler-icon"></span>
-        </button>
-      </div>
-      <div class="col text-end" >
-        <i class="bi bi-translate" (click)="switchLanguage()"></i>
-      </div>
-      
+    <div class="col-9">
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-bs-toggle="collapse"
+        data-bs-target="#navbarToggleExternalContent"
+        aria-controls="navbarToggleExternalContent"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
     </div>
+    <div class="col text-end">
+      <i class="bi bi-translate" (click)="switchLanguage()"></i>
+    </div>
+  </div>
 </nav>
 <!--MASTER COLLAPSE-->
 <div class="collapse" id="navbarToggleExternalContent">
@@ -84,7 +83,12 @@
       </div>
       <!--END SUB BUSINESS-->
       <!--MANAGE USERS-->
-      <div class="row mt-3">
+      <div
+        class="row mt-3"
+        (click)="showComponent('userManagement')"
+        data-bs-toggle="collapse"
+        data-bs-target="#navbarToggleExternalContent"
+      >
         <div class="col-1" style="width: 2rem">
           <i class="bi bi-people-fill"></i>
         </div>
@@ -94,7 +98,7 @@
           </span>
         </div>
       </div>
-       <!--SIGN OUT-->
+      <!--SIGN OUT-->
       <div class="row mt-3" (click)="logOut()">
         <div class="col-1" style="width: 2rem">
           <i class="bi bi-door-open-fill"></i>
@@ -105,11 +109,12 @@
           </span>
         </div>
       </div>
-
     </div>
   </div>
   <!-- END MASTER COLLAPSE-->
 </div>
 <app-business *ngIf="vvAddBusinessComponent"></app-business>
-<app-bi-management-options *ngIf="vvBIManagementOptionsComponent"></app-bi-management-options>
-
+<app-bi-management-options
+  *ngIf="vvBIManagementOptionsComponent"
+></app-bi-management-options>
+<app-user-management *ngIf="vvUserManagementComponent"></app-user-management>

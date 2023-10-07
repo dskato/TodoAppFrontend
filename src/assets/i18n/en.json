@@ -91,7 +91,29 @@
   "assignusr-ls-lbl-email": "Email",
   "assignusr-ls-lbl-role": "Role",
   "assignusr-ls-lbl-action": "Action",
-  "assignusr-ls-rolechg": "User role changed succesfully!"
+  "assignusr-ls-rolechg": "User role changed succesfully!",
+
+  "usr-mngt-title":"User management",
+  "usr-mngt-description":"Manage user information, delete users and assign an hourly rate.",
+  "usr-mngt-filter":"Filters",
+  "usr-mngt-lbl-usr":"User",
+  "usr-mngt-lbl-grl":"User information",
+  "usr-mngt-lbl-action":"Actions",
+  "usr-mngt-lbl-avtr":"Avatar",
+  "usr-mngt-lbl-name":"Name",
+  "usr-mngt-lbl-email":"Email",
+  "usr-mngt-lbl-phone":"Phone",
+  "usr-mngt-lbl-birthdate":"Birthdate",
+  "usr-mngt-lbl-role":"Role",
+  "usr-mngt-lbl-hrate":"H. Rate",
+
+  "hrate-title":"Hourly Rate",
+  "hrate-desc":"Assign the current user a hourly rate, this will be count in the checkin",
+  "hrate-lbl":"Rate",
+  "hrate-req":"Rate field is required",
+  "hrate-save":"Save rate"
+
+
 
 
 }

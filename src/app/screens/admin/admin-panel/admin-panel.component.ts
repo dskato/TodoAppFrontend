@@ -11,9 +11,9 @@ import { TokenService } from 'src/app/services/token/token.service';
 export class AdminPanelComponent {
 
   vvAddBusinessComponent: boolean = false;
-  vvBIManagementOptionsComponent: boolean = true;
-  //vvUserComponent: boolean = false;
-  vvEditBusinessDialog: boolean = true;
+  vvBIManagementOptionsComponent: boolean = false;
+  vvUserManagementComponent: boolean = true;
+
 
   constructor(private languageService: LanguageService, private routeGuardService: RouteGuardService, private tokenService: TokenService){
     this.tokenService.redirectIfNotValid('/login');
@@ -23,10 +23,7 @@ export class AdminPanelComponent {
   showComponent(componentName: string) {
     this.vvAddBusinessComponent = componentName === 'addBusiness';
     this.vvBIManagementOptionsComponent = componentName === 'biManagement';
-
-    //delete
-    this.vvEditBusinessDialog = componentName === 'editBiDialog';
-
+    this.vvUserManagementComponent = componentName === 'userManagement';
   }
 
   switchLanguage() {

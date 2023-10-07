@@ -91,7 +91,29 @@
   "assignusr-ls-lbl-email": "Correo",
   "assignusr-ls-lbl-role": "Rol",
   "assignusr-ls-lbl-action": "Opciones",
-  "assignusr-ls-rolechg": "Rol de usuario actualizado satisfactoriamente!"
+  "assignusr-ls-rolechg": "Rol de usuario actualizado satisfactoriamente!",
+
+  "usr-mngt-title":"Gestion de usuarios",
+  "usr-mngt-description":"Gestione la informacion de los usuarios, borre usuarios y asigne las tarifas por horas.",
+  "usr-mngt-filter":"Filtros",
+  "usr-mngt-lbl-usr":"Usuario",
+  "usr-mngt-lbl-grl":"Informacion del usuario",
+  "usr-mngt-lbl-action":"Actions",
+  "usr-mngt-lbl-avtr":"Avatar",
+  "usr-mngt-lbl-name":"Nombre",
+  "usr-mngt-lbl-email":"Correo",
+  "usr-mngt-lbl-phone":"Telefono",
+  "usr-mngt-lbl-birthdate":"Fecha de nacimiento",
+  "usr-mngt-lbl-role":"Rol",
+  "usr-mngt-lbl-hrate":"Tarifa",
+
+  "hrate-title":"Tarifa Horaria",
+  "hrate-desc":"Asigna al usuario actual una tarifa horaria, esto se contara en el checkin",
+  "hrate-lbl":"Tarifa",
+  "hrate-req":"El campo de la tarifa es requerido",
+  "hrate-save":"Guardar tarifa"
+
+
 
 
 

@@ -27,13 +27,16 @@ import { BusinessComponent } from './screens/admin/business/business.component';
 import { BiManagementOptionsComponent } from './screens/admin/bi-management-options/bi-management-options.component';
 import { EditBusinessDialogComponent } from './screens/dialogs/admin/edit-business-dialog/edit-business-dialog.component';
 import { AssignUsersDialogComponent } from './screens/dialogs/admin/assign-users-dialog/assign-users-dialog.component';
+import { UserManagementComponent } from './screens/admin/user-management/user-management.component';
+import { NgxJdenticonModule } from 'ngx-jdenticon';
+import { AssignHrateDialogComponent } from './screens/dialogs/admin/assign-hrate-dialog/assign-hrate-dialog.component';
 
 export function HttpLoaderFactory(http: HttpClient) {
   return new TranslateHttpLoader(http, './assets/i18n/', '.json');
 }
 
 @NgModule({
-  declarations: [AppComponent, LoginComponent, SigninComponent, RecoverPasswordComponent, AdminPanelComponent, CheckInComponent, UnauthorizedComponent, BusinessComponent, BiManagementOptionsComponent, EditBusinessDialogComponent, AssignUsersDialogComponent],
+  declarations: [AppComponent, LoginComponent, SigninComponent, RecoverPasswordComponent, AdminPanelComponent, CheckInComponent, UnauthorizedComponent, BusinessComponent, BiManagementOptionsComponent, EditBusinessDialogComponent, AssignUsersDialogComponent, UserManagementComponent, AssignHrateDialogComponent],
   imports: [
     BrowserModule,
     NgbModule,
@@ -44,6 +47,7 @@ export function HttpLoaderFactory(http: HttpClient) {
     HttpClientModule,
     CommonModule,
     BrowserAnimationsModule, // required animations module,
+    NgxJdenticonModule,
     ToastrModule.forRoot(),
     TranslateModule.forRoot({
       defaultLanguage: 'en',
