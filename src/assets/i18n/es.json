@@ -47,11 +47,17 @@
 
   "navbar-business":"Gestionar empresa",
   "navbar-users":"Gestionar usuarios",
+  "navbar-events": "Gestionar eventos",
   "navbar-signout":"Cerrar sesion",
 
   "business-add-title":"Agregar una nueva empresa",
   "business-add-description":"Los campos con * son requeridos",
   "business-succesfully":"Empresa agregada de manera satisfactoria!",
+
+  "event-add":"Agregar nuevo evento",
+  "event-management":"Opciones de gestion de eventos",
+  
+
 
   "businessform-name":"Nombre de la empresa*",
   "businessform-description":"Descripcion",
@@ -111,7 +117,16 @@
   "hrate-desc":"Asigna al usuario actual una tarifa horaria, esto se contara en el checkin",
   "hrate-lbl":"Tarifa",
   "hrate-req":"El campo de la tarifa es requerido",
-  "hrate-save":"Guardar tarifa"
+  "hrate-save":"Guardar tarifa",
+
+  "event-title":"Add a new event",
+  "event-lbl-name":"Nombre del evento*",
+  "event-lbl-date":"Fecha del evento*",
+  "event-val-name":"Dia de trabajo: ",
+  "event-lbl-location":"Lugar del evento",
+  "event-lbl-desc":"Descripcion del evento",
+  "event-btn-save":"Guardar evento"
+
 
 
 

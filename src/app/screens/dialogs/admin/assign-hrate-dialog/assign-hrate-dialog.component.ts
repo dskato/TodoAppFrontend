@@ -25,7 +25,6 @@ export class AssignHrateDialogComponent implements OnInit {
     private translateService: TranslateService
   ) {
     this.userData = data;
-    console.log(this.userData);
     this.assignHR = this.formBuilder.group({
       hrate: [data.hourlyRate || '', [Validators.required]],
     });
@@ -40,7 +39,8 @@ export class AssignHrateDialogComponent implements OnInit {
       this.adminService.assignHourlyRate(hrateDto).subscribe(
         (response) => {
           if (response.code == 200) {
-            console.log(response);
+            const result = { success: true };
+            this.dialogRef.close(result);
           } else {
             this.toastr.error(response.data, 'Error');
           }
@@ -52,4 +52,6 @@ export class AssignHrateDialogComponent implements OnInit {
     }
   }
   ngOnInit(): void {}
+
+ 
 }

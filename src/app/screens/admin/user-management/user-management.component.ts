@@ -5,7 +5,6 @@ import { AdminService } from 'src/app/services/api/admin/admin.service';
 import { MatDialog } from '@angular/material/dialog';
 import { AssignHrateDialogComponent } from '../../dialogs/admin/assign-hrate-dialog/assign-hrate-dialog.component';
 
-
 @Component({
   selector: 'app-user-management',
   templateUrl: './user-management.component.html',
@@ -19,7 +18,7 @@ export class UserManagementComponent {
   constructor(
     private tokenService: TokenService,
     private adminService: AdminService,
-    private dialog:MatDialog
+    private dialog: MatDialog
   ) {
     this.userEmail = tokenService.getUserEmail();
     this.userId = tokenService.getUserId();
@@ -44,7 +43,10 @@ export class UserManagementComponent {
       data: userInfo,
     });
 
-    
+    dialogRef.afterClosed().subscribe((result) => {
+      if (result && result.success) {
+        this.getUsersToManagement();
+      }
+    });
   }
-
 }

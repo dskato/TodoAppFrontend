@@ -10,6 +10,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ToastrModule } from 'ngx-toastr';
 import { CommonModule } from '@angular/common';
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
+import { LeafletModule } from '@asymmetrik/ngx-leaflet';
 
 
 
@@ -30,13 +31,15 @@ import { AssignUsersDialogComponent } from './screens/dialogs/admin/assign-users
 import { UserManagementComponent } from './screens/admin/user-management/user-management.component';
 import { NgxJdenticonModule } from 'ngx-jdenticon';
 import { AssignHrateDialogComponent } from './screens/dialogs/admin/assign-hrate-dialog/assign-hrate-dialog.component';
+import { EventsComponent } from './screens/admin/events/events.component';
+import { AddEventsComponent } from './screens/admin/add-events/add-events.component';
 
 export function HttpLoaderFactory(http: HttpClient) {
   return new TranslateHttpLoader(http, './assets/i18n/', '.json');
 }
 
 @NgModule({
-  declarations: [AppComponent, LoginComponent, SigninComponent, RecoverPasswordComponent, AdminPanelComponent, CheckInComponent, UnauthorizedComponent, BusinessComponent, BiManagementOptionsComponent, EditBusinessDialogComponent, AssignUsersDialogComponent, UserManagementComponent, AssignHrateDialogComponent],
+  declarations: [AppComponent, LoginComponent, SigninComponent, RecoverPasswordComponent, AdminPanelComponent, CheckInComponent, UnauthorizedComponent, BusinessComponent, BiManagementOptionsComponent, EditBusinessDialogComponent, AssignUsersDialogComponent, UserManagementComponent, AssignHrateDialogComponent, EventsComponent, AddEventsComponent],
   imports: [
     BrowserModule,
     NgbModule,
@@ -48,6 +51,7 @@ export function HttpLoaderFactory(http: HttpClient) {
     CommonModule,
     BrowserAnimationsModule, // required animations module,
     NgxJdenticonModule,
+    LeafletModule,
     ToastrModule.forRoot(),
     TranslateModule.forRoot({
       defaultLanguage: 'en',

@@ -102,35 +102,4 @@ export class BusinessComponent {
   }
 }
 
-/*
-            var businessId = response.data;
-            var assignUserDto = {} as AssignUser;
-            assignUserDto.idBusiness = parseInt(businessId);
-            assignUserDto.idUser = representativeUser.idUser;
-            assignUserDto.isRepresentative = true;
-            //Make selected user representative
-            this.adminService.makeUserRepresentative(assignUserDto).subscribe(
-              (response) => {
-                if (response.code == 200) {
-                  this.toastr.success(
-                    this.translateService.instant('business-succesfully'),
-                    'Ok'
-                  );
-                } else {
-                  this.toastr.error(response.data, 'Error');
-                }
-              },
-              (error) => {
-                console.log(error);
-              }
-            );
 
-            this.adminService.getAssignableUsers().subscribe(
-      (response) => {
-        this.userList = response.data as unknown as UserDto[];
-      },
-      (error) => {
-        console.log(error);
-      }
-    );
-            */

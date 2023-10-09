@@ -41,7 +41,7 @@ export class RouteGuardService implements CanActivate {
     const role = this.tokenService.getUserRole();
     if (role == 'ADMIN' || role == 'SUPERADMIN') {
       this.router.navigate(['/admin-panel']);
-    } else if (role == 'USER  ') {
+    } else if (role == 'USER') {
       this.router.navigate(['/check-in']);
     }
   }

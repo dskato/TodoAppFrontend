@@ -47,11 +47,15 @@
 
   "navbar-business": "Manage business",
   "navbar-users": "Manage users",
+  "navbar-events": "Manage events",
   "navbar-signout": "Sign out",
 
   "business-add-title": "Add a new business",
   "business-add-description": "Fields with * are required",
   "business-succesfully": "Business added succesfully!",
+
+  "event-add":"Add new event",
+  "event-management":"Event management options",
 
   "businessform-name": "Business name*",
   "businessform-description": "Description",
@@ -111,7 +115,15 @@
   "hrate-desc":"Assign the current user a hourly rate, this will be count in the checkin",
   "hrate-lbl":"Rate",
   "hrate-req":"Rate field is required",
-  "hrate-save":"Save rate"
+  "hrate-save":"Save rate",
+
+  "event-title":"Add a new event",
+  "event-lbl-name":"Event name*",
+  "event-lbl-date":"Event date*",
+  "event-val-name":"Working day:",
+  "event-lbl-location":"Event location",
+  "event-lbl-desc":"Event description",
+  "event-btn-save":"Save event"
 
 
 

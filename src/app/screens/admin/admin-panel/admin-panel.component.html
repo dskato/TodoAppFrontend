@@ -43,6 +43,7 @@
       <!--SUB BUSINESS-->
       <!--ADD BUSINESS-->
       <div
+        *ngIf="vvAddBIOption"
         class="collapse"
         id="navbarToggleExternalContent-business"
         data-bs-toggle="collapse"
@@ -82,6 +83,74 @@
         </div>
       </div>
       <!--END SUB BUSINESS-->
+
+
+      <!-- MANAGE EVENTS -->
+      <div
+        data-bs-toggle="collapse"
+        data-bs-target="#navbarToggleExternalContent-event"
+        aria-controls="navbarToggleExternalContent-event"
+        aria-expanded="false"
+        aria-label="Toggle navigation-event"
+        class="row mt-3"
+      >
+        <div class="col-1" style="width: 2rem">
+          <i class="bi bi-calendar-event-fill"></i>
+        </div>
+        <div class="col">
+          <span class="nav-txt mx-auto" id="sigin-msg">
+            {{ "navbar-events" | translate }}
+          </span>
+        </div>
+      </div>
+
+      <!-- SUB - ADD EVENT -->
+      <div
+      class="collapse"
+      id="navbarToggleExternalContent-event"
+      data-bs-toggle="collapse"
+      data-bs-target="#navbarToggleExternalContent"
+      aria-controls="navbarToggleExternalContent"
+      aria-expanded="false"
+    >
+      <div class="row mt-2" (click)="showComponent('addEvent')">
+        <div class="col-1 ms-4" style="width: 2rem">
+          <i class="bi bi-calendar-plus-fill"></i>
+        </div>
+        <div class="col">
+          <span class="nav-txt mx-auto" id="sigin-msg">
+            {{ "event-add" | translate }}
+          </span>
+        </div>
+      </div>
+    </div>
+      <!-- SUB END - ADD EVENT -->
+      
+      <!-- SUB - EVENT MANAGEMENT -->
+      <div
+      class="collapse"
+      id="navbarToggleExternalContent-event"
+      data-bs-toggle="collapse"
+      data-bs-target="#navbarToggleExternalContent"
+      aria-controls="navbarToggleExternalContent"
+      aria-expanded="false"
+    >
+      <div class="row mt-2" (click)="showComponent('eventManagement')">
+        <div class="col-1 ms-4" style="width: 2rem">
+          <i class="bi bi-person-workspace"></i>
+        </div>
+        <div class="col">
+          <span class="nav-txt mx-auto" id="sigin-msg">
+            {{ "event-management" | translate }}
+          </span>
+        </div>
+      </div>
+    </div>
+      <!-- SUB - END EVENT MANAGEMENT -->
+
+      <!-- END MANAGE EVENTS-->
+
+
       <!--MANAGE USERS-->
       <div
         class="row mt-3"
@@ -118,3 +187,5 @@
   *ngIf="vvBIManagementOptionsComponent"
 ></app-bi-management-options>
 <app-user-management *ngIf="vvUserManagementComponent"></app-user-management>
+<app-events *ngIf="vvEventManagementComponent"></app-events>
+<app-add-events *ngIf="vvAddEventComponent"></app-add-events>
