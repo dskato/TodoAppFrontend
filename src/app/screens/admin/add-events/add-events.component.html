@@ -49,6 +49,27 @@
           <label for="edate-inpt" class="form-label mt-1">{{
             "event-lbl-location" | translate
           }}</label>
+          <div class="row align-items-center">
+            <div class="col">
+              <input
+                type="text"
+                id="susrTypeahead"
+                class="form-control mb-2"
+                placeholder=". . ."
+                [ngbTypeahead]="search"
+                [inputFormatter]="formatter"
+                [disabled]="dsblRepInpt"
+                (selectItem)="onSelectedAddress($event)"
+                #mapsearchTp
+              />
+            </div>
+            <div class="col-auto">
+              <i class="bi bi-x-lg" (click)="clearSelectedAddress()"></i>
+            </div>
+            <div class="col-auto">
+              <i class="bi bi-trash3-fill" (click)="clearMarkers()"></i>
+            </div>
+          </div>
           <div
             *ngIf="vvMapInitialized"
             class="map"
