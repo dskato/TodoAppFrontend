@@ -1,6 +1,6 @@
 export const environment = {
   production: false,
-  AuthApi: 'http://localhost:5041/',
-  SystemApi: 'http://localhost:5042/',
+  AuthApi: 'https://domainmicroservice.onrender.com/',
+  SystemApi: 'https://domainmicroservice.onrender.com/',
   BingApiKey: 'AroIhgdPLfAAMN5UWRbANqblpFgTaMkLJEwNyuKQ_zL59_gXKcORKxfgjnBWmAEe'
 };
