@@ -29,9 +29,10 @@ jobs:
       - name: Deploy to Firebase Hosting
         run: |
           export FIREBASE_TOKEN=$(npx firebase-tools login:ci --json | jq -r .token)
-          echo "$PRIVATE_KEY" > service-account-key.json
+          echo "$FIREBASE_SERVICE_ACCOUNT_KEY" > service-account-key.json
           export GOOGLE_APPLICATION_CREDENTIALS=$(pwd)/service-account-key.json
           npx firebase-tools deploy --only hosting --project todoapp-401521 --token "$FIREBASE_TOKEN" --debug
         env:
-          PRIVATE_KEY: ${{ secrets.FIREBASE_SERVICE_ACCOUNT }}
+          FIREBASE_SERVICE_ACCOUNT_KEY: ${{ secrets.FIREBASE_SERVICE_ACCOUNT_KEY }}
+
 
