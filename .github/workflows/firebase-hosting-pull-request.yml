@@ -27,4 +27,4 @@ jobs:
           npm run build
 
       - name: Deploy to Firebase Hosting
-        run: npx firebase-tools deploy --only hosting --project todoapp-401521 --debug
+        run: npx firebase-tools deploy --only hosting --project todoapp-401521 --token ${{ secrets.FIREBASE_SERVICE_ACCOUNT }} --debug
