@@ -27,4 +27,7 @@ jobs:
           npm run build
 
       - name: Deploy to Firebase Hosting
-        run: npx firebase-tools deploy --only hosting --project todoapp-401521 --token ${{ secrets.FIREBASE_SERVICE_ACCOUNT }} --debug
+        run: |
+          export FIREBASE_TOKEN=$(npx firebase-tools login:ci --json | jq -r .token)
+          export GOOGLE_APPLICATION_CREDENTIALS="${{ secrets.FIREBASE_SERVICE_ACCOUNT }}"
+          npx firebase-tools deploy --only hosting --project todoapp-401521 --token "$FIREBASE_TOKEN" --debug
