@@ -17,7 +17,9 @@ export class TokenService {
   }
 
   setToken(token: string): void {
-    localStorage.setItem(this.tokenKey, token);
+    if(this.isJWT(token)){
+      localStorage.setItem(this.tokenKey, token);
+    }
   }
 
   removeToken(): void {
@@ -66,5 +68,18 @@ export class TokenService {
   }
   getUserEmail(): string {
     return jwtDecode<UserToken>(this.getToken()).email;
+  }
+
+  isJWT(token: string): boolean {
+    const parts = token.split('.');
+    if (parts.length !== 3) {
+      return false;
+    }
+    const [header, payload, signature] = parts;
+    if (!header || !payload || !signature) {
+      return false; 
+    }
+
+    return true; 
   }
 }

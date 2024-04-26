@@ -50,6 +50,7 @@ export class LoginComponent {
 
   login() {
     if (this.loginForm.valid) {
+      this.tokenService.removeToken();
       this.authService
         .login(
           this.loginForm.get('email')?.value,
