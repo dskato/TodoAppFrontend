@@ -59,15 +59,15 @@ export class LoginComponent {
         .subscribe(
           (response) => {
             if (response.code != 200) {
-              this.toastr.error(
+              /* this.toastr.error(
                 this.translateService.instant('incorrect-auth'),
                 'Error'
-              );
+              ); */
             } else {
-              this.toastr.success(
+              /* this.toastr.success(
                 this.translateService.instant('correct-auth'),
                 'Ok'
-              );
+              ); */
 
               this.tokenService.setToken(response.data);
               this.routeGuard.redirectBasedOnRole();

@@ -83,15 +83,15 @@ export class AssignUsersDialogComponent implements OnInit {
     this.adminService.assignUserToBusiness(assignUserDto).subscribe(
       (response) => {
         if (response.code == 200) {
-          this.toastr.success(
+          /* this.toastr.success(
             this.translateService.instant('assignusr-ok'),
             'Ok'
-          );
+          ); */
           //Call again the list and clear
           this.getAssignedUsers(this.currentBusiness.idBusiness);
           this.clearSelectedUser();
         } else {
-          this.toastr.error(response.data, 'Error');
+          /* this.toastr.error(response.data, 'Error'); */
         }
       },
       (error) => {
@@ -107,14 +107,14 @@ export class AssignUsersDialogComponent implements OnInit {
     this.adminService.unassignUserToBusiness(assignUserDto).subscribe(
       (response) => {
         if (response.code == 200) {
-          this.toastr.success(
+          /* this.toastr.success(
             this.translateService.instant('unassignusr-ok'),
             'Ok'
-          );
+          ); */
           //Call again the list and clear
           this.getAssignedUsers(this.currentBusiness.idBusiness);
         } else {
-          this.toastr.error(response.data, 'Error');
+          /* this.toastr.error(response.data, 'Error'); */
         }
       },
       (error) => {
@@ -129,13 +129,13 @@ export class AssignUsersDialogComponent implements OnInit {
         console.log(response);
         if (response.code == 200) {
           if (response.data == 'Ok') {
-            this.toastr.success(
+            /* this.toastr.success(
               this.translateService.instant('assignusr-ls-rolechg'),
               'Ok'
-            );
+            ); */
           }
         } else {
-          this.toastr.error(response.data, 'Error');
+          /* this.toastr.error(response.data, 'Error'); */
         }
       },
       (error) => {

@@ -106,13 +106,13 @@ export class EditBusinessDialogComponent implements OnInit {
       this.adminService.updateBusiness(saveBusinessDto).subscribe(
         (response) => {
           if (response.code == 200) {
-            this.toastr.success(
+            /* this.toastr.success(
               this.translateService.instant('businessform-edit-ok'),
               'Ok'
-            );
+            ); */
             this.onCloseClick();
           } else {
-            this.toastr.error(response.data, 'Error');
+            /* this.toastr.error(response.data, 'Error'); */
             this.onCloseClick();
           }
         },
@@ -121,10 +121,10 @@ export class EditBusinessDialogComponent implements OnInit {
         }
       );
     } else {
-      this.toastr.error(
+      /* this.toastr.error(
         this.translateService.instant('business-add-description'),
         'Error'
-      );
+      ); */
     }
   }
 }

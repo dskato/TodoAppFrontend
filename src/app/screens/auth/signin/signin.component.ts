@@ -62,7 +62,7 @@ export class SigninComponent {
       var selectedBusiness = this.signinForm.get('assignedBusiness')?.value;
       
       if (selectedBusiness.idBusiness == undefined) {
-        this.toastr.error(this.translateService.instant('sigin-NOTOK'), 'Error');
+        /* this.toastr.error(this.translateService.instant('sigin-NOTOK'), 'Error'); */
         return;
       }
       saveUserDto.firstName = this.signinForm.get('firstname')?.value;
@@ -86,13 +86,13 @@ export class SigninComponent {
             this.adminService.assignUserToBusiness(assignUserDto).subscribe(
               (response) => {
                 if (response.code == 200) {
-                  this.toastr.success(
+                  /* this.toastr.success(
                     this.translateService.instant('sigin-OK'),
                     'Ok'
-                  );
+                  ); */
                   this.goHome();
                 } else {
-                  this.toastr.error(response.data, 'Error');
+                  /* this.toastr.error(response.data, 'Error'); */
                 }
               },
               (error) => {
@@ -100,7 +100,7 @@ export class SigninComponent {
               }
             );
           } else {
-            this.toastr.error(response.data, 'Error');
+            /* this.toastr.error(response.data, 'Error'); */
           }
         },
         (error) => {

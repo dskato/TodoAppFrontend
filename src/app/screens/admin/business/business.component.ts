@@ -81,12 +81,12 @@ export class BusinessComponent {
       this.adminService.saveBusiness(saveBusinessDto).subscribe(
         (response) => {
           if (response.code == 200) {
-            this.toastr.success(
+            /* this.toastr.success(
               this.translateService.instant('business-succesfully'),
               'Ok'
-            );
+            ); */
           } else {
-            this.toastr.error(response.data, 'Error');
+            /* this.toastr.error(response.data, 'Error'); */
           }
         },
         (error) => {
@@ -94,10 +94,10 @@ export class BusinessComponent {
         }
       );
     } else {
-      this.toastr.error(
+      /* this.toastr.error(
         this.translateService.instant('business-add-description'),
         'Error'
-      );
+      ); */
     }
   }
 }

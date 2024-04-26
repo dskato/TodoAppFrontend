@@ -42,13 +42,13 @@ export class AssignHrateDialogComponent implements OnInit {
             const result = { success: true };
             this.dialogRef.close(result);
           } else {
-            this.toastr.error(response.data, 'Error');
+            /* this.toastr.error(response.data, 'Error'); */
           }
         },
         (error) => {}
       );
     } else {
-      this.toastr.error(this.translateService.instant('hrate-req'), 'Error');
+      /* this.toastr.error(this.translateService.instant('hrate-req'), 'Error'); */
     }
   }
   ngOnInit(): void {}

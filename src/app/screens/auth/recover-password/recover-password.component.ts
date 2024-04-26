@@ -45,7 +45,7 @@ export class RecoverPasswordComponent {
       this.authService.restorePassword(this.email).subscribe(
         (respose) => {
           if (respose.code != 200) {
-            this.toastr.error(respose.data, 'Error');
+            /* this.toastr.error(respose.data, 'Error'); */
           } else {
             this.vvCodeInput = true;
           }
@@ -55,10 +55,10 @@ export class RecoverPasswordComponent {
         }
       );
     } else {
-      this.toastr.error(
+      /* this.toastr.error(
         this.translateService.instant('sigin-validation-email'),
         'Error'
-      );
+      ); */
     }
   }
 
@@ -67,13 +67,13 @@ export class RecoverPasswordComponent {
       this.authService.verifyCode(this.code).subscribe(
         (respose) => {
           if (respose.code != 200) {
-            this.toastr.error(respose.data, 'Error');
+            /* this.toastr.error(respose.data, 'Error'); */
           } else {
             this.vvNewPasswordInput = true;
-            this.toastr.success(
+           /*  this.toastr.success(
               this.translateService.instant('rpassword-validation-codeok'),
               'Ok'
-            );
+            ); */
           }
         },
         (error) => {
@@ -81,33 +81,33 @@ export class RecoverPasswordComponent {
         }
       );
     } else {
-      this.toastr.error(
+      /* this.toastr.error(
         this.translateService.instant('rpassword-validation-code'),
         'Error'
-      );
+      ); */
     }
   }
 
   changePassword() {
     if (!this.newPassword || !this.verifyNewPassword) {
-      this.toastr.error(
+      /* this.toastr.error(
         this.translateService.instant('sigin-validation-password'),
         'Error'
-      );
+      ); */
     } else {
       if (this.newPassword != this.verifyNewPassword) {
-        this.toastr.error(
+        /* this.toastr.error(
           this.translateService.instant('rpassword-notmatch'),
           'Error'
-        );
+        ); */
       } else {
         this.authService.changePassword(this.code, this.newPassword).subscribe(
           (response) => {
             if(response.code != 200){
-              this.toastr.error(
+             /*  this.toastr.error(
                 response.data,
                 'Error'
-              );
+              ); */
             }else{
               this.toastr.success(
                 this.translateService.instant('rpassword-allok'),
